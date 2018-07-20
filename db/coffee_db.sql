@@ -7,12 +7,12 @@ CREATE TABLE recipes (
     name VARCHAR(255),
     brew_method VARCHAR(255),
     grams INT2,
-    water_temperature INT2,
+    water_temp INT2,
     water_weight INT2,
     grind VARCHAR(255),
-    pre_infuse INT2,
     brew_time INT2,
-    ratio INT2
+    ratio INT2,
+    info VARCHAR(255)
 );
 
 CREATE TABLE patrons (

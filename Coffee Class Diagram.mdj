@@ -242,23 +242,6 @@
 										},
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAFkt7fLZAM9+uU=",
-											"_parent": {
-												"$ref": "AAAAAAFkt7FqKAIYJyE="
-											},
-											"model": {
-												"$ref": "AAAAAAFkt7fLSwM6Dew="
-											},
-											"font": "Arial;13;0",
-											"left": 21,
-											"top": 255,
-											"width": 255,
-											"height": 13,
-											"text": "+pre_infuse",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAFkt7YjsAMsv4w=",
 											"_parent": {
 												"$ref": "AAAAAAFkt7FqKAIYJyE="
@@ -268,7 +251,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 21,
-											"top": 270,
+											"top": 255,
 											"width": 255,
 											"height": 13,
 											"text": "+brew_time .   calculate after",
@@ -285,7 +268,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 21,
-											"top": 285,
+											"top": 270,
 											"width": 255,
 											"height": 13,
 											"text": "+ratio Not initialise",
@@ -302,10 +285,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 21,
-											"top": 300,
+											"top": 285,
 											"width": 255,
 											"height": 13,
-											"text": "+special_directions",
+											"text": "+info",
 											"horizontalAlignment": 0
 										}
 									],
@@ -313,7 +296,7 @@
 									"left": 16,
 									"top": 145,
 									"width": 265,
-									"height": 173
+									"height": 158
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -326,7 +309,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 16,
-									"top": 318,
+									"top": 303,
 									"width": 265,
 									"height": 10
 								},
@@ -1844,14 +1827,6 @@
 						},
 						{
 							"_type": "UMLAttribute",
-							"_id": "AAAAAAFkt7fLSwM6Dew=",
-							"_parent": {
-								"$ref": "AAAAAAFkt7FqJAIQ7Tk="
-							},
-							"name": "pre_infuse"
-						},
-						{
-							"_type": "UMLAttribute",
 							"_id": "AAAAAAFkt7YjlgMpq2o=",
 							"_parent": {
 								"$ref": "AAAAAAFkt7FqJAIQ7Tk="
@@ -1874,8 +1849,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkt7FqJAIQ7Tk="
 							},
-							"name": "special_directions",
-							"type": ""
+							"name": "info"
 						}
 					]
 				},
