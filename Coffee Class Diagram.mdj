@@ -135,7 +135,7 @@
 											"top": 150,
 											"width": 255,
 											"height": 13,
-											"text": "+id",
+											"text": "+id              PK",
 											"horizontalAlignment": 0
 										},
 										{
@@ -500,7 +500,7 @@
 											"top": 278,
 											"width": 222,
 											"height": 13,
-											"text": "+id",
+											"text": "+id              PK",
 											"horizontalAlignment": 0
 										},
 										{
@@ -568,7 +568,7 @@
 											"top": 338,
 											"width": 222,
 											"height": 13,
-											"text": "+recipe_id",
+											"text": "+recipe_id        FK",
 											"horizontalAlignment": 0
 										},
 										{
@@ -585,7 +585,7 @@
 											"top": 353,
 											"width": 222,
 											"height": 13,
-											"text": "+patron_id",
+											"text": "+patron_id        FK",
 											"horizontalAlignment": 0
 										}
 									],
@@ -777,7 +777,7 @@
 											"top": 150,
 											"width": 222,
 											"height": 13,
-											"text": "+id",
+											"text": "+id              PK",
 											"horizontalAlignment": 0
 										},
 										{
@@ -830,13 +830,30 @@
 											"height": 13,
 											"text": "+EXTENSION: gear list",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFkuQf1KTUfkpE=",
+											"_parent": {
+												"$ref": "AAAAAAFkt72fhgTeHOA="
+											},
+											"model": {
+												"$ref": "AAAAAAFkuQf1BzUcpsc="
+											},
+											"font": "Arial;13;0",
+											"left": 637,
+											"top": 210,
+											"width": 222,
+											"height": 13,
+											"text": "+How many reviews left",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 632,
 									"top": 145,
 									"width": 232,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -849,7 +866,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 632,
-									"top": 213,
+									"top": 228,
 									"width": 232,
 									"height": 10
 								},
@@ -1771,8 +1788,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkt7FqJAIQ7Tk="
 							},
-							"name": "id",
-							"type": ""
+							"name": "id              PK"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1915,7 +1931,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkt7rOawSBP34="
 							},
-							"name": "id"
+							"name": "id              PK"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1947,7 +1963,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkt7rOawSBP34="
 							},
-							"name": "recipe_id"
+							"name": "recipe_id        FK"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1955,7 +1971,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkt7rOawSBP34="
 							},
-							"name": "patron_id"
+							"name": "patron_id        FK"
 						}
 					]
 				},
@@ -1973,7 +1989,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkt72fhQTW2wc="
 							},
-							"name": "id"
+							"name": "id              PK"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1999,6 +2015,14 @@
 							},
 							"name": "EXTENSION",
 							"type": "gear list"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFkuQf1BzUcpsc=",
+							"_parent": {
+								"$ref": "AAAAAAFkt72fhQTW2wc="
+							},
+							"name": "How many reviews left"
 						}
 					]
 				},
