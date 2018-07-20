@@ -36,4 +36,28 @@ def find(id)
     return Coffee.new(results.first)
 end #find
 
+def self.show_all
+    sql = "SELECT * FROM recipes"
+    results_array_of_hashes = SqlRunner.run(sql)
+    return results_array_of_hashes.map {|hash| Coffee.new(hash)}
+    #sends back new coffee objects, created from hash values, from table search 
+end #self show all
+
+def delete_by_id
+    sql = "DELETE FROM recipes WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql,values)
+end #delete_by_id
+
+def self.delete_all
+    sql = "DELETE FROM recipes"
+    SqlRunner.run(sql)
+end #self delete all
+
+#TO DO
+
+def link_recipe_id_to_person
+
+end #search for recipes by person id
+
 end #class
