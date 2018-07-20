@@ -18,7 +18,7 @@ CREATE TABLE recipes (
 CREATE TABLE patrons (
     id SERIAL8 PRIMARY KEY,
     username VARCHAR(255),
-    personal_bio VARCHAR(255)
+    bio VARCHAR(255)
 );
 
 CREATE TABLE reviews (

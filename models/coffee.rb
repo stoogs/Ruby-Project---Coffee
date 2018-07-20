@@ -19,7 +19,13 @@ end #initialize
 
 c = Coffee.new({"name" => "hey", "brew_method" => "V60", "grams" => 20, "water_temp" => 94, "water_weight" => 250, "grind" => "coarse", "info" => "additional info"})
 
+#TO DO
 
+def link_recipe_id_to_person
+    #search for recipes by person id
+    end 
+
+#DONE
 def save()
     @ratio = @water_weight / @grams
     sql = "INSERT INTO recipes (name,brew_method,grams,water_temp,water_weight,grind,ratio,info) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id"
@@ -53,11 +59,5 @@ def self.delete_all
     sql = "DELETE FROM recipes"
     SqlRunner.run(sql)
 end #self delete all
-
-#TO DO
-
-def link_recipe_id_to_person
-
-end #search for recipes by person id
 
 end #class
