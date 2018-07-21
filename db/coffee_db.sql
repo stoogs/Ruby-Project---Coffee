@@ -25,10 +25,8 @@ CREATE TABLE reviews (
     id SERIAL2 PRIMARY KEY,
     review VARCHAR(255),
     bean_rating INT2,
-    patron_id INT2,
-    recipe_id INT2,
-    FOREIGN KEY (recipe_id) REFERENCES recipes(id) ON DELETE CASCADE,   -- HNNNGGGGGGGG?
-    FOREIGN KEY (patron_id) REFERENCES patrons(id) ON DELETE CASCADE   -- HNNNGGGGGGGG?
+    recipe_id INT2 REFERENCES recipes(id), --ON DELETE CASCADE,   -- HNNNGGGGGGGG?
+    patron_id INT2 REFERENCES patrons(id) --ON DELETE CASCADE   -- HNNNGGGGGGGG?
   );
 
     -- ------------WORKING FOR FOREIGN KEY------------

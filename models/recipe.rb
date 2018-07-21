@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class Coffee
+class Recipe
     
     attr_reader( :id, :name, :brew_method, :grams, :water_temp, :water_weight, :grind, :info)
 
@@ -17,7 +17,7 @@ def initialize( options )
     @info = options['info']                     # $8  STRING
 end #initialize
 
-c = Coffee.new({"name" => "hey", "brew_method" => "V60", "grams" => 20, "water_temp" => 94, "water_weight" => 250, "grind" => "coarse", "info" => "additional info"})
+c = Recipe.new({"name" => "hey", "brew_method" => "V60", "grams" => 20, "water_temp" => 94, "water_weight" => 250, "grind" => "coarse", "info" => "additional info"})
 
 #TO DO
 
@@ -39,14 +39,14 @@ def find(id) #OK
     values = [id]
     results = SqlRunner.run(sql,values)
     p results
-    return Coffee.new(results.first)
+    return Recipe.new(results.first)
 end #find
 
 def self.show_all #OK
     sql = "SELECT * FROM recipes"
     results_array_of_hashes = SqlRunner.run(sql)
-    return results_array_of_hashes.map {|hash| Coffee.new(hash)}
-    #sends back new coffee objects, created from hash values, from table search 
+    return results_array_of_hashes.map {|hash| Recipe.new(hash)}
+    #sends back new Recipe objects, created from hash values, from table search 
 end #self show all
 
 def delete_by_id #OK
