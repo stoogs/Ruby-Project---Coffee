@@ -27,8 +27,8 @@ CREATE TABLE reviews (
     bean_rating INT2,
     patron_id INT2,
     recipe_id INT2,
-    FOREIGN KEY (patron_id) REFERENCES patrons(id),
-    FOREIGN KEY (recipe_id) REFERENCES recipes(id)
+    FOREIGN KEY (patron_id) REFERENCES patrons(id) ON DELETE CASCADE,
+    FOREIGN KEY (recipe_id) REFERENCES recipes(id) ON DELETE CASCADE
 --     recipe_id INT2 REFERENCES recipes(id), --ON DELETE CASCADE,   -- HNNNGGGGGGGG?
 --     patron_id INT2 REFERENCES patrons(id) --ON DELETE CASCADE   -- HNNNGGGGGGGG?
 );

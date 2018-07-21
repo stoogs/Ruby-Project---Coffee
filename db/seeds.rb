@@ -14,8 +14,8 @@ p2 = Patron.new({"username" => "Sir Spresso", "bio" => "God shot"})
 p3 = Patron.new({"username" => "Mr Americano", "bio" => "with water"})
 patrons = [p1.save(),p2.save(),p3.save()]
 
-r1 = Review.new({"review" => "V60 P1 OMG! TOTS AMAZ BALLS", "bean_rating" => 3, "patron_id" => p1.id, "recipe_id" => v60.id})
-r2 = Review.new({"review" => "V60 P2 OMG! TOTS AMAZ BALLS", "bean_rating" => 3, "patron_id" => p2.id, "recipe_id" => v60.id})
+r1 = Review.new({"review" => "V60 P1 OMG! TOTS AMAZ BALLS", "bean_rating" => 4, "patron_id" => p1.id, "recipe_id" => v60.id})
+r2 = Review.new({"review" => "V60 P2 OMG! TOTS AMAZ BALLS", "bean_rating" => 1, "patron_id" => p2.id, "recipe_id" => v60.id})
 r3 = Review.new({"review" => "FP P3 OMG! TOTS AMAZ BALLS", "bean_rating" => 2, "patron_id" => p3.id, "recipe_id" => fp.id})
 r4 = Review.new({"review" => "CH P2 OMG! TOTS AMAZ BALLS", "bean_rating" => 5, "patron_id" => p2.id, "recipe_id" => ch.id})
 reviews = [r1.save,r2.save, r3.save,r4.save]
@@ -23,6 +23,10 @@ reviews = [r1.save,r2.save, r3.save,r4.save]
 p "Completed #{recipes.length} Recipe Seeds"
 p "Completed #{patrons.length} Patron Seeds"
 p "Completed #{reviews.length} Recipe Seeds"
+
+p  r1.average_bean_rating.round(1) #RETURNS INT, CALCULATED ON SQL
+
+p Recipe.find_by_id(40)
 
  #p1.link_persona_id_to_recipe
  #v60.link_recipe_id_to_person

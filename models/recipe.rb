@@ -28,24 +28,12 @@ def save() #OK
     @id = results.first()['id'].to_i
 end #save
 
-def find(id) #OK
+def self.find_by_id(id) #OK
     sql = "SELECT * FROM recipes WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql,values)
     return Recipe.new(results.first) #returns hash in 1 deep array
 end #find
-
-# def link_recipe_id_to_person  #search for recipes by person id
-#     sql = "SELECT recipes.* FROM recipes
-#     INNER JOIN reviews
-#     ON reviews.id = recipes.id
-#     WHERE recipes.id = $1"  
-#     values = [@id]
-#     result = SqlRunner.run(sql,values)
-#     p result.first
-#     #search for recipe reviews by recipe id.
-#     #search for recipes by person id  
-# end #link
 
 def self.show_all #OK
     sql = "SELECT * FROM recipes"
@@ -64,5 +52,17 @@ def self.delete_all #OK
     sql = "DELETE FROM recipes"
     SqlRunner.run(sql)
 end #self delete all
+
+# def link_recipe_id_to_person  #search for recipes by person id
+#     sql = "SELECT recipes.* FROM recipes
+#     INNER JOIN reviews
+#     ON reviews.id = recipes.id
+#     WHERE recipes.id = $1"  
+#     values = [@id]
+#     result = SqlRunner.run(sql,values)
+#     p result.first
+#     #search for recipe reviews by recipe id.
+#     #search for recipes by person id  
+# end #link
 
 end #class
