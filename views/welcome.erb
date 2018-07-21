@@ -1,14 +1,22 @@
-<h1> Welcome to Patron viewer <h1>
+<h1> Welcome to Patron/Recipe/Review viewer <h1>
+
 <h4> 
 <% for patron in @patrons %>
-<p>Patron: <%= patron.username %> : <%= patron.bio %> </p>
+<p>Patron: <%= patron.instance_variables %> </p>
 <% end%>
 </h4>
+
 <h4>
 <% for recipe in @recipes %>
-<p>Recipe: <%= pp recipe.id  %> </p>
+<p>Recipe: <%= recipe.instance_variables %> </p>
 <% end%>
 </h4>
-<h1>
-<% pp @recipes %>
-</h1>
+
+
+<h4>
+<% for review in @reviews %>
+<p>Review: - <%= review.instance_variables %> </p>
+<% end%>
+</h4>
+
+

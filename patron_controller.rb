@@ -8,7 +8,7 @@ also_reload('./models/*')
 get '/' do
     @patrons = Patron.show_all
     @recipes = Recipe.show_all
-     pp @recipes
+    @reviews = Review.show_all
     erb( :welcome )
   end
 

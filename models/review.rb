@@ -43,4 +43,10 @@ def average_bean_rating
     return avg_br[0]['avg'].to_f
 end #average_bean_rating
 
+def self.show_all
+    sql = "SELECT * FROM reviews"
+    results_array_of_hashes = SqlRunner.run(sql)
+    return results_array_of_hashes.map {|hash| Review.new(hash)}
+end #self.show_all
+
 end # class end
