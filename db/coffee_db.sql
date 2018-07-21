@@ -23,9 +23,8 @@ CREATE TABLE patrons (
 
 CREATE TABLE reviews (
     id SERIAL2 PRIMARY KEY,
-    review_title VARCHAR(255),
+    review VARCHAR(255),
     bean_rating INT2,
-    comments VARCHAR(255),
     patron_id INT2,
     recipe_id INT2,
     FOREIGN KEY (recipe_id) REFERENCES recipes(id) ON DELETE CASCADE,   -- HNNNGGGGGGGG?

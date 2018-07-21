@@ -1,5 +1,6 @@
 require_relative('../models/coffee')
 require_relative('../models/patron')
+require_relative('../models/review')
 
 v60 = Coffee.new({"name" => "Vvvv", "brew_method" => "V60", "grams" => 16, "water_temp" => 94, "water_weight" => 250, "grind" => "salt", "info" => "add more info"})
 fp = Coffee.new({"name" => "Frenchie", "brew_method" => "FP", "grams" => 32, "water_temp" => 94, "water_weight" => 500, "grind" => "very coarse", "info" => "add more info"})
