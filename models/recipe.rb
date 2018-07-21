@@ -19,12 +19,6 @@ end #initialize
 
 c = Recipe.new({"name" => "hey", "brew_method" => "V60", "grams" => 20, "water_temp" => 94, "water_weight" => 250, "grind" => "coarse", "info" => "additional info"})
 
-#TO DO
-
-def link_recipe_id_to_person
-    #search for recipes by person id
-    end 
-
 #DONE
 def save() #OK
     @ratio = @water_weight / @grams
@@ -38,9 +32,20 @@ def find(id) #OK
     sql = "SELECT * FROM recipes WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql,values)
-    p results
-    return Recipe.new(results.first)
+    return Recipe.new(results.first) #returns hash in 1 deep array
 end #find
+
+# def link_recipe_id_to_person  #search for recipes by person id
+#     sql = "SELECT recipes.* FROM recipes
+#     INNER JOIN reviews
+#     ON reviews.id = recipes.id
+#     WHERE recipes.id = $1"  
+#     values = [@id]
+#     result = SqlRunner.run(sql,values)
+#     p result.first
+#     #search for recipe reviews by recipe id.
+#     #search for recipes by person id  
+# end #link
 
 def self.show_all #OK
     sql = "SELECT * FROM recipes"

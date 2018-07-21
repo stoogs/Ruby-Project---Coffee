@@ -22,7 +22,7 @@ def self.find_by_id(id) #OK
    values = [id]
    result = SqlRunner.run(sql,values)
    p result.first
-   return Patron.new(result.first)
+   return Patron.new(result.first) #returns hash in 1 deep array
 end #self.find
 
 def self.show_all #OK - returns objects
@@ -42,11 +42,16 @@ def self.delete_all #OK
         sql = "DELETE FROM patrons"
         SqlRunner.run(sql)
 end #self delete all
-#TO DO
 
-def link_persona_id_to_recipe
-    
-    #search for recipes by person id
-    end 
+# def link_persona_id_to_recipe #---------------------NOT OK ******************
+#     sql = "SELECT patrons.* FROM patrons
+#     INNER JOIN reviews
+#     ON reviews.id = patrons.id
+#     WHERE patrons.id = $1"
+#     values = [@id]
+#     result = SqlRunner.run(sql,values)
+#     p result.first
+#     #search for recipes by person id
+# end 
 
 end #class end

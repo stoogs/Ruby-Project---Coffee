@@ -20,12 +20,9 @@ r3 = Review.new({"review" => "FP P3 OMG! TOTS AMAZ BALLS", "bean_rating" => 2, "
 r4 = Review.new({"review" => "CH P2 OMG! TOTS AMAZ BALLS", "bean_rating" => 5, "patron_id" => p2.id, "recipe_id" => ch.id})
 reviews = [r1.save,r2.save, r3.save,r4.save]
 
-
-
-
-
-
-
 p "Completed #{recipes.length} Recipe Seeds"
 p "Completed #{patrons.length} Patron Seeds"
 p "Completed #{reviews.length} Recipe Seeds"
+
+ #p1.link_persona_id_to_recipe
+ #v60.link_recipe_id_to_person
