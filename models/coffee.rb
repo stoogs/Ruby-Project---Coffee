@@ -26,7 +26,7 @@ def link_recipe_id_to_person
     end 
 
 #DONE
-def save()
+def save() #OK
     @ratio = @water_weight / @grams
     sql = "INSERT INTO recipes (name,brew_method,grams,water_temp,water_weight,grind,ratio,info) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id"
     values = [@name,@brew_method,@grams,@water_temp,@water_weight,@grind,@ratio,@info]
@@ -34,7 +34,7 @@ def save()
     @id = results.first()['id'].to_i
 end #save
 
-def find(id)
+def find(id) #OK
     sql = "SELECT * FROM recipes WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql,values)
@@ -42,20 +42,20 @@ def find(id)
     return Coffee.new(results.first)
 end #find
 
-def self.show_all
+def self.show_all #OK
     sql = "SELECT * FROM recipes"
     results_array_of_hashes = SqlRunner.run(sql)
     return results_array_of_hashes.map {|hash| Coffee.new(hash)}
     #sends back new coffee objects, created from hash values, from table search 
 end #self show all
 
-def delete_by_id
+def delete_by_id #OK
     sql = "DELETE FROM recipes WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql,values)
 end #delete_by_id
 
-def self.delete_all
+def self.delete_all #OK
     sql = "DELETE FROM recipes"
     SqlRunner.run(sql)
 end #self delete all

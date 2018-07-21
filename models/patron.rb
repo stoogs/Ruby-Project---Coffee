@@ -10,28 +10,37 @@ def initialize( options )
     @bio = options['bio']
 end #initialize
 
-def save()
+def save() #OK
     sql = "INSERT INTO patrons (username,bio) VALUES ($1,$2) RETURNING id"
     values = [@username, @bio]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
 end #save
 
-def find(id)
-   
-end #find
+def self.find_by_id(id) #OK
+   sql = "SELECT * FROM patrons WHERE id = $1" 
+   values = [id]
+   result = SqlRunner.run(sql,values)
+   p result.first
+   return Patron.new(result.first)
+end #self.find
 
-def self.show_all
-   
+def self.show_all #OK - returns objects
+   sql = "SELECT * FROM patrons"
+   patrons_list = SqlRunner.run(sql)
+   return patrons_list.map {|patron| Patron.new(patron)}
     #sends back new patron objects, created from hash values, from table search 
-end #self show all
+end #self.show_all
 
-def delete_by_id
-    
+def delete_by_id #OK
+    sql = "DELETE FROM patrons WHERE id = $1 "
+    values = [@id]
+    SqlRunner.run(sql,values)
 end #delete_by_id
 
-def self.delete_all
-    
+def self.delete_all #OK
+        sql = "DELETE FROM patrons"
+        SqlRunner.run(sql)
 end #self delete all
 #TO DO
 
