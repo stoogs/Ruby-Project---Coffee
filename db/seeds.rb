@@ -24,9 +24,8 @@ p "Completed #{recipes.length} Recipe Seeds"
 p "Completed #{patrons.length} Patron Seeds"
 p "Completed #{reviews.length} Recipe Seeds"
 
-p  r1.average_bean_rating.round(1) #RETURNS INT, CALCULATED ON SQL
 
-p Recipe.find_by_id(40)
+pp r1
 
  #p1.link_persona_id_to_recipe
  #v60.link_recipe_id_to_person

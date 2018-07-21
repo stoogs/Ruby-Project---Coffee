@@ -31,8 +31,8 @@ end #save
 def self.find_by_id(id) #OK
     sql = "SELECT * FROM recipes WHERE id = $1"
     values = [id]
-    results = SqlRunner.run(sql,values)
-    return Recipe.new(results.first) #returns hash in 1 deep array
+    result = SqlRunner.run(sql,values)
+    return Recipe.new(result.first) #returns hash in 1 deep array
 end #find
 
 def self.show_all #OK
