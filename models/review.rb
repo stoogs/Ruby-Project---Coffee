@@ -49,12 +49,12 @@ def self.show_all
     return results_array_of_hashes.map {|hash| Review.new(hash)}
 end #self.show_all
 
-def delete_by_id
+def self.delete_by_id
     #delete
     #will link or delete on cascade affect this?
 end
 
-def delete_all
+def self.delete_all
     #is this a good idea?
 end
 
