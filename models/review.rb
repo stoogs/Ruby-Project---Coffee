@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner.rb')
-require('pry-byebug')
+# require('pry-byebug')
 class Review
 
 attr_reader :id, :review, :bean_rating, :patron_id, :recipe_id

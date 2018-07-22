@@ -1,0 +1,8 @@
+<h1> Welcome to Recipes viewer in recipes/index.erb <h1>
+<a href="/">Home</a>
+
+<h4>
+<% for recipe in @recipes %>
+<p>Recipe: <%= recipe.instance_variables %> </p>
+<% end%>
+</h4>

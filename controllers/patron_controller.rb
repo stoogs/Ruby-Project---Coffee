@@ -6,7 +6,7 @@ also_reload('../models/*')
 
 get '/patrons' do
   @patrons = Patron.show_all
-  erb( :"patrons/index")
+  erb( :"/patrons/index")
 end
 
 # index
