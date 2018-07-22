@@ -3,6 +3,12 @@
 
 <h4>
 <% for review in @reviews %>
-<p>Review: - <%= review.instance_variables %> </p>
+<table>
+<tr>
+<td>Rating:-</td>
+<td> <%= review.bean_rating %> </td>
+<td>Review:-</td>
+<td> <%= review.review %> </td>
+</table>
 <% end%>
 </h4>

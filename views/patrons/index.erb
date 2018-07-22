@@ -1,8 +1,15 @@
 <h1> Welcome to Patron viewer in views/index.erb <h1>
 <a href="/">Home</a>
 <h4> 
+
 <% for patron in @patrons %>
-<p>Patron: <%= patron.instance_variables %> </p>
+<table>
+<tr>
+<td>Patron:-</td>
+<td> <%= patron.username %> </td>
+<td>Bio:-</td>
+<td> <%= patron.bio %> </td>
+</table>
 <% end%>
 </h4>
 

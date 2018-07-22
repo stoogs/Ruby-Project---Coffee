@@ -3,6 +3,31 @@
 
 <h4>
 <% for recipe in @recipes %>
-<p>Recipe: <%= recipe.instance_variables %> </p>
+<table>
+<tr>-----------------------------------------------------------------------------------
+    <td>Recipe Name :<%=recipe.name%></td>
+    </tr>  
+</table>
+<table> 
+    <tr>
+    <td>Method</td>
+    <td>Water</td>
+    <td>Temp</td>
+    <td>Grams</td>
+    <td>Grind</td>  
+    </tr>
+        <tr>
+        <td> <%= recipe.brew_method %> </td>
+        <td> <%= recipe.water_weight %>ml</td>
+        <td> <%= recipe.water_temp %> </td>
+        <td> <%= recipe.grams %> </td>
+        <td> <%= recipe.grind %> </td>
+        </tr>
+    <tr>
+    <th>Additional Comments:</th>
+    <th> <%= recipe.info %> </th>
+    </tr>
+</table>
+</br>
 <% end%>
 </h4>
