@@ -49,4 +49,23 @@ def self.show_all
     return results_array_of_hashes.map {|hash| Review.new(hash)}
 end #self.show_all
 
+def delete_by_id
+    #delete
+    #will link or delete on cascade affect this?
+end
+
+def delete_all
+    #is this a good idea?
+end
+
+#EXTENSION FUNCTIONS
+
+#return true/false for duplicate recipes
+def is_recipe_duplicate?
+#get all recipes - all = Recipe.show_all
+#for each recipe , returned as a array of hashes
+#if recipe = @recipe
+#return true/false
+end #is_recipe_duplicate
+
 end # class end
