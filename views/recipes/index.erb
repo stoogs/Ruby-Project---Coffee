@@ -2,14 +2,16 @@
 <a href="/">Home</a>
 
 <h4>
+
 <% for recipe in @recipes %>
-<table>
+Recipe id: <%= recipe.id %> 
+<br><table>
 <tr>-----------------------------------------------------------------------------------
     <td>Recipe Name :<%=recipe.name%></td>
     </tr>  
 </table>
 <table> 
-    <tr>
+    <tr>-----------------------------------------------------------------------------------
     <td>Method</td>
     <td>Water</td>
     <td>Temp</td>
@@ -24,10 +26,11 @@
         <td> <%= recipe.grind %> </td>
         </tr>
     <tr>
-    <th>Additional Comments:</th>
-    <th> <%= recipe.info %> </th>
+    <th>Comments:    </th>
+    <th>  <%= recipe.info %> </th>
     </tr>
 </table>
-</br>
+-----------------------------------------------------------------------------------
+<br></br>
 <% end%>
 </h4>

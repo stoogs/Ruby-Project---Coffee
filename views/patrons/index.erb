@@ -4,12 +4,11 @@
 
 <% for patron in @patrons %>
 <table>
+<tr><td>Patron id: <%=patron.id%></td>
 <tr>
-<td>Patron:-</td>
-<td> <%= patron.username %> </td>
-<td>Bio:-</td>
-<td> <%= patron.bio %> </td>
-</table>
+<td>Name: <%=patron.username%></td>
+<tr>
+<td>Bio:  <%=patron.bio%></td>
+</table><br>
 <% end%>
 </h4>
-
