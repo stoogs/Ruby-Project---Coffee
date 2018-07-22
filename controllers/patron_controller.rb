@@ -16,15 +16,20 @@ end
 # end
 
 # show
-# get '/patrons' do
-#   "Hello World"
-# end
+get '/patrons/:id' do
+  @patrons = Patron.find_by_id(params['id'])
+  erb( :"patrons/show" )
+end
+
 # new
 
 # create
 
 # edit
-
+get '/patrons/:id/edit' do
+  @patrons = Patron.find_by_id(params['id'])
+  erb( :"patrons/edit")
+  end
 # update
 
 # destroy

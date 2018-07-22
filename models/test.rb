@@ -13,7 +13,7 @@ require_relative('review')
 # p r1.average_bean_rating.round(1) #RETURNS INT, CALCULATED ON SQL --- TESTED OK
 # p Recipe.find_by_id(40) --- TESTED OK
 # Recipe.find_by_id(22)   --- TESTED OK
-# Patron.find_by_id(22)   --- TESTED OK
+# Patron.find_by_id(5)    --- TESTED OK
 # Patron.show_all         --- TESTED OK
 # patron1.delete_by_id    --- TESTED OK
 # Patron.delete_all       --- TESTED OK
