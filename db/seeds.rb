@@ -1,13 +1,15 @@
 require_relative('../models/recipe')
 require_relative('../models/patron')
 require_relative('../models/review')
-
+Review.delete_all
+Recipe.delete_all
+Patron.delete_all
 
 v60 = Recipe.new({"name" => "Vvvv", "brew_method" => "V60", "grams" => 16, "water_temp" => 94, "water_weight" => 250, "grind" => "salt", "info" => "add more info"})
 fp = Recipe.new({"name" => "Frenchie", "brew_method" => "FP", "grams" => 32, "water_temp" => 94, "water_weight" => 500, "grind" => "very coarse", "info" => "add more info"})
 ch = Recipe.new({"name" => "Chemmie", "brew_method" => "Chemex", "grams" => 37 , "water_temp" => 94, "water_weight" => 500, "grind" => "sand", "info" => "add more info"})
 ka = Recipe.new({"name" => "Kaliii", "brew_method" => "Kalita", "grams" => 14, "water_temp" => 94, "water_weight" => 200, "grind" => "sea salt", "info" => "add more info"})
-recipes = [v60.save(),fp.save(),ch.save(),ka.save(),v60.save(),fp.save(),ch.save(),ka.save()]
+recipes = [v60.save(),fp.save(),ch.save(),ka.save()]
 
 p1 = Patron.new({"username" => "Mr Latte", "bio" => "takes milk"})
 p2 = Patron.new({"username" => "Sir Spresso", "bio" => "God shot"})
@@ -24,8 +26,8 @@ p "Completed #{recipes.length} Recipe Seeds"
 p "Completed #{patrons.length} Patron Seeds"
 p "Completed #{reviews.length} Recipe Seeds"
 
+p Review.show_all
 
-pp r1
 
  #p1.link_persona_id_to_recipe
  #v60.link_recipe_id_to_person

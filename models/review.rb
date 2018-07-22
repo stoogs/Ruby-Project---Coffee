@@ -35,6 +35,7 @@ def patron #OK
     return Patron.new(results.first) #returns hash in 1 deep array
 end #patron
 
+#pass a recipe and calculate in SQL
 def average_bean_rating
     sql = "SELECT AVG(bean_rating) FROM reviews
     WHERE recipe_id = $1"
@@ -43,18 +44,22 @@ def average_bean_rating
     return avg_br[0]['avg'].to_f
 end #average_bean_rating
 
-def self.show_all
+def self.show_all #OK
     sql = "SELECT * FROM reviews"
     results_array_of_hashes = SqlRunner.run(sql)
     return results_array_of_hashes.map {|hash| Review.new(hash)}
 end #self.show_all
 
-def self.delete_by_id
-    #delete
+def delete_by_id #OK
+    sql = "DELETE FROM public.reviews WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql,values)
     #will link or delete on cascade affect this?
 end
 
-def self.delete_all
+def self.delete_all #OK
+    sql = "DELETE FROM public.reviews"
+    SqlRunner.run(sql)
     #is this a good idea?
 end
 
