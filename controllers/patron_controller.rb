@@ -34,6 +34,12 @@ get '/patrons/:id/edit' do
 post '/patrons/:id' do
   patron = Patron.new(params)
   patron.update
-redirect to "/patrons/#{(params['id'])}"
+  redirect to "/patrons/#{(params['id'])}"
 end
 # destroy
+
+post '/patrons/:id/delete' do
+  patron = Patron.find_by_id(params['id'])
+  patron.delete_by_id
+  redirect to '/patrons'
+end

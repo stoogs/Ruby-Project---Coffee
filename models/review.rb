@@ -35,6 +35,11 @@ def patron #OK
     return Patron.new(results.first) #returns hash in 1 deep array
 end #patron
 
+def update() #TO TEST
+    sql = "UPDATE reviews SET (review,bean_rating) = ($1,$2) WHERE id = $3"
+    values = [@review,@bean_rating]
+    SqlRunner.run(sql, values)
+  end
 #pass a recipe and calculate in SQL
 def average_bean_rating
     sql = "SELECT AVG(bean_rating) FROM reviews
