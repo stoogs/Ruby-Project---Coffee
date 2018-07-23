@@ -6,19 +6,44 @@ also_reload('../models/*')
 
 get '/recipes' do
   @recipes = Recipe.show_all
-  erb( :"/recipes/index")
+  erb( :"recipes/index")
+end
+
+# new
+get '/recipes/new' do
+  @recipes = Recipe.show_all
+  erb( :"recipes/new")
+end
+
+#create
+post '/recipes' do
+  new_recipe = Recipe.new(params)
+  new_recipe.save
+  redirect to ("/recipes")
 end
 
 # show
-# get '/recipes' do
-#   "Hello World"
-# end
-# new
-
-# create
+get '/recipes/:id' do
+  @recipes = Recipe.find_by_id(params['id'])
+  erb( :"recipes/show" )
+end
 
 # edit
+get '/recipes/:id/edit' do
+  @recipes = Recipe.find_by_id(params['id'])
+  erb( :"recipes/edit")
+  end
 
 # update
+post '/recipes/:id' do
+  recipe = Recipe.new(params)
+  recipe.update
+  redirect to "/recipes/#{(params['id'])}"
+end
 
 # destroy
+post '/recipes/:id/delete' do
+  recipe = Recipe.find_by_id(params['id'])
+  recipe.delete_by_id
+  redirect to '/recipes'
+end

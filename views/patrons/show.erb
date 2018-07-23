@@ -1,9 +1,8 @@
 <h1>Patron by id views/patron/show.erb</h1>
-
-
-<p>id: <%=@patrons.id%> </p>
+<fieldset>
+<legend>Patron id: <%=@patrons.id%> </legend>
 <p>Username: <%=@patrons.username%> </p>
 <p>Bio: <%=@patrons.bio%> </p>
 <form action="/patrons/<%= @patrons.id %>/edit"></a><input type="submit" value="Edit"></form>
-
+</fieldset>
 <form action="/patrons/<%= @patrons.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Recipe
     
-    attr_reader( :id, :name, :brew_method, :grams, :water_temp, :water_weight, :grind, :info)
+    attr_reader( :id, :name, :brew_method, :grams, :water_temp, :water_weight, :grind, :info, :ratio, :brew_time )
 
 def initialize( options )
     @id = options['id'].to_i if options['id']   # NO$ STRING / INT
@@ -21,12 +21,18 @@ c = Recipe.new({"name" => "hey", "brew_method" => "V60", "grams" => 20, "water_t
 
 #DONE
 def save() #OK
-    @ratio = @water_weight / @grams
+    #@ratio =2 # @water_weight / @grams
     sql = "INSERT INTO recipes (name,brew_method,grams,water_temp,water_weight,grind,ratio,info) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id"
     values = [@name,@brew_method,@grams,@water_temp,@water_weight,@grind,@ratio,@info]
     results = SqlRunner.run(sql,values)
     @id = results.first()['id'].to_i
 end #save
+
+def update()
+    sql = "UPDATE recipes SET (name,brew_method) = ($1,$2) WHERE id = $3"
+    values = [@name, @brew_method, @id]
+    SqlRunner.run(sql, values)
+  end
 
 def self.find_by_id(id) #OK
     sql = "SELECT * FROM recipes WHERE id = $1"

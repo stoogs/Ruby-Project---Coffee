@@ -1,0 +1,13 @@
+<h4>Patron by id views/recipes/edit.erb</h4>
+<p>
+<form method="POST" action="/recipes/<%=@recipes.id %>"> 
+<fieldset>
+<legend> Recipe Form '<%= @recipes.name %>'</legend>
+    <label for="recipe-name">Recipe name</label>
+        <input type="text" id="recipe-name" name="name" placeholder="Enter your name" />
+    <br>
+        <label for="brew-method">Brew Method</label>
+            <input type="text" id="brew-method" name="brew-method" placeholder="Enter Your Brew Method" />
+        <form<input type="submit" value="Edit"></form>
+        <input type ="submit"></button>
+</fieldset>
