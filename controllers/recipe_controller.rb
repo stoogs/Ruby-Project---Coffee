@@ -9,26 +9,26 @@ get '/recipes' do
   erb( :"recipes/index")
 end
 
-# new
+# new - SHOW ALL ITEMS
 get '/recipes/new' do
   @recipes = Recipe.show_all
   erb( :"recipes/new")
 end
 
-#create
+#create - NEW LISTING
 post '/recipes' do
   new_recipe = Recipe.new(params)
   new_recipe.save
   redirect to ("/recipes")
 end
 
-# show
+# show - LISTING BY ID
 get '/recipes/:id' do
   @recipes = Recipe.find_by_id(params['id'])
   erb( :"recipes/show" )
 end
 
-# edit
+# edit - EDIT
 get '/recipes/:id/edit' do
   @recipes = Recipe.find_by_id(params['id'])
   erb( :"recipes/edit")

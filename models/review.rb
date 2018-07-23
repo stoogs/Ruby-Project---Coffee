@@ -13,7 +13,7 @@ def initialize(options)
 end #intitialize
 
 def save() #OK
-    sql = "INSERT INTO reviews (review, bean_rating, patron_id, recipe_id) VALUES ($1,$2,$3,$4) RETURNING id"
+    sql = "INSERT INTO reviews (review, bean_rating) VALUES ($1,$2,$3,$4) RETURNING id"
     values = [@review,@bean_rating,@patron_id, @recipe_id]
     results = SqlRunner.run(sql,values)
     @id = results.first['id'].to_i
@@ -37,9 +37,10 @@ end #patron
 
 def update() #TO TEST
     sql = "UPDATE reviews SET (review,bean_rating) = ($1,$2) WHERE id = $3"
-    values = [@review,@bean_rating]
+    values = [@review,@bean_rating,@id]
     SqlRunner.run(sql, values)
-  end
+end
+
 #pass a recipe and calculate in SQL
 def average_bean_rating
     sql = "SELECT AVG(bean_rating) FROM reviews
@@ -55,7 +56,14 @@ def self.show_all #OK
     return results_array_of_hashes.map {|hash| Review.new(hash)}
 end #self.show_all
 
-def delete_by_id #OK
+def self.find_by_id(id) #OK
+    sql = "SELECT * FROM public.reviews WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql,values)
+    return Review.new(result.first) #returns hash in 1 deep array
+end #find
+
+def delete_by_id #OK - MESSED WITH
     sql = "DELETE FROM public.reviews WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql,values)
@@ -71,11 +79,11 @@ end
 #EXTENSION FUNCTIONS
 
 #return true/false for duplicate recipes
-def is_recipe_duplicate?
+#def is_recipe_duplicate?
 #get all recipes - all = Recipe.show_all
 #for each recipe , returned as a array of hashes
 #if recipe = @recipe
 #return true/false
-end #is_recipe_duplicate
+#end #is_recipe_duplicate
 
 end # class end

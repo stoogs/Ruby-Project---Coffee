@@ -19,4 +19,4 @@ require_relative('review')
 # Patron.delete_all       --- TESTED OK
 # Recipe.show_all         --- TESTED OK
 # v60.delete_by_id        --- TESTED OK
-# Recipe.delete_all       --- TESTED OK
+# Recipe.delete_all       --- TESTED OKr
