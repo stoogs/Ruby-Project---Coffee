@@ -1,9 +1,7 @@
-<h1>EDIT</h1>
-<h4>Patron by id views/patron/edit.erb</h4>
+<h1>New Patron Page </h1>
 
+<form action="/patrons"method="POST" >
 
-
-<form>
 <fieldset>
 <legend> Patron Form</legend>
     <label for="patron-name">Patron name</label>
@@ -11,12 +9,5 @@
     <br>
     <label for="bio">Biogrphy</label>
     <input type="text" id="bio" name="bio" placeholder="Biography" />
-    <button type ="submit">Save Name</button>
+    <button type ="submit">Create New Patron</button>
 </fieldset>
-
-<h1>CREATE EDITING FORM</h1>
-<h1>CREATE EDITING FORM</h1>
-<h1>CREATE EDITING FORM</h1>
-
-
-<a href="/patrons/<%=@id%>"></a>

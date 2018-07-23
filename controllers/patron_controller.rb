@@ -9,21 +9,30 @@ get '/patrons' do
   erb( :"/patrons/index")
 end
 
+# new
+get '/patrons/new' do
+  @patrons = Patron.show_all
+  erb( :"patrons/new")
+end
+#create
+post '/patrons' do
+  new_patron = Patron.new(params)
+  new_patron.save
+  redirect to ("/patrons")
+end
+
 # index
 # get '/patrons' do
 #     @patrons = Patron.show_all
 #     erb( :"index" )
 # end
+#show2
 
 # show
 get '/patrons/:id' do
   @patrons = Patron.find_by_id(params['id'])
   erb( :"patrons/show" )
 end
-
-# new
-
-# create
 
 # edit
 get '/patrons/:id/edit' do
