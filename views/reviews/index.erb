@@ -1,6 +1,6 @@
-<h1> Welcome to Reviews viewer in reviews/index.erb <h1>
+<h1> Welcome to Reviews viewer in reviews/index.erb </h1>
 
-<h4>
+
 <% for review in @reviews %>
 <table>
 <tr><td>Review id: <%=review.id%></td>
@@ -9,4 +9,4 @@
 <td>Rating <%=review.bean_rating%></td>
 </table><br>
 <% end%>
-</h4>
+

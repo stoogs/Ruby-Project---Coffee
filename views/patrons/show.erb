@@ -1,10 +1,9 @@
 <h1>Patron by id views/patron/show.erb</h1>
 
 
-<p> Show Patron id: <%=@patrons.id%> </p>
-<p> Show Patron username: <%=@patrons.username%> </p>
-<p> Show Patron bio: <%=@patrons.bio%> </p>
+<p>id: <%=@patrons.id%> </p>
+<p>Username: <%=@patrons.username%> </p>
+<p>Bio: <%=@patrons.bio%> </p>
 <form action="/patrons/<%= @patrons.id %>/edit"></a><input type="submit" value="Edit"></form>
-
 
 <form action="/patrons/<%= @patrons.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

@@ -1,12 +1,17 @@
-<h1> Welcome to Patron viewer in patrons/index.erb <h1>
-<a href="/patrons/new">NEW</a>
-
+<h1> Welcome to Patron viewer in patrons/index.erb </h1>
+-------------------------------------<br>
+Create A New Patron : <button><a href="/patrons/new">NEW</a></button><br>
+-------------------------------------
+<br>
+<h2> Patron List </h2>
+--------------------------
 <% for patron in @patrons %>
 <table>
     <tr><td>Name: <%= patron.username %></td></tr>
     <tr><td>Bio:  <%=patron.bio%></td></tr>
-    <tr><td><a href="/patrons/<%= patron.id %>">SELECT</a></td></tr>
+    <tr><td><button><a href="/patrons/<%= patron.id %>">SELECT</a></button></td></tr>
 </table>
+------------------------------------------------------
 <% end%>
 
 

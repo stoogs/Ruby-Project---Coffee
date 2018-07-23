@@ -1,5 +1,5 @@
 <h4>Patron by id views/patron/edit.erb</h4>
-
+<p>
 <form method="POST" action="/patrons/<%=@patrons.id %>"> 
 <fieldset>
 <legend> Patron Form '<%= @patrons.username %>'</legend>
@@ -8,5 +8,9 @@
     <br>
         <label for="bio">Biography</label>
             <input type="text" id="bio" name="bio" placeholder="Biography" />
-        <input type ="submit">Save Edit</button>
+        <form<input type="submit" value="Edit"></form>
+        <input type ="submit"></button>
 </fieldset>
+
+
+</p>

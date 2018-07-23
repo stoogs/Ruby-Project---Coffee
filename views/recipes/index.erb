@@ -1,6 +1,6 @@
-<h1> Welcome to Recipes viewer in recipes/index.erb <h1>
+<h1> Welcome to Recipes viewer in recipes/index.erb </h1>
 
-<h4>
+
 <% for recipe in @recipes %>
 Recipe id: <%= recipe.id %> 
 <br><table>
@@ -24,11 +24,10 @@ Recipe id: <%= recipe.id %>
         <td> <%= recipe.grind %> </td>
         </tr>
     <tr>
-    <th>Comments:    </th>
-    <th>  <%= recipe.info %> </th>
+    <td>Comments:    </td>
+    <td>  <%= recipe.info %> </td>
     </tr>
 </table>
 -----------------------------------------------------------------------------------
 <br></br>
 <% end%>
-</h4>
