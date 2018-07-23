@@ -32,6 +32,12 @@ def self.show_all #OK - returns objects
     #sends back new patron objects, created from hash values, from table search 
 end #self.show_all
 
+def update()
+    sql = "UPDATE patrons SET (username,bio) = ($1,$2) WHERE id = $3"
+    values = [@username, @bio, @id]
+    SqlRunner.run(sql, values)
+  end
+  
 def delete_by_id #OK
     sql = "DELETE FROM patrons WHERE id = $1 "
     values = [@id]

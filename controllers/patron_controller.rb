@@ -20,25 +20,20 @@ post '/patrons' do
   new_patron.save
   redirect to ("/patrons")
 end
-
-# index
-# get '/patrons' do
-#     @patrons = Patron.show_all
-#     erb( :"index" )
-# end
-#show2
-
 # show
 get '/patrons/:id' do
   @patrons = Patron.find_by_id(params['id'])
   erb( :"patrons/show" )
 end
-
 # edit
 get '/patrons/:id/edit' do
   @patrons = Patron.find_by_id(params['id'])
   erb( :"patrons/edit")
   end
 # update
-
+post '/patrons/:id' do
+  patron = Patron.new(params)
+  patron.update
+redirect to "/patrons/#{(params['id'])}"
+end
 # destroy
