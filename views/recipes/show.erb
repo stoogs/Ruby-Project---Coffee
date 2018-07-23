@@ -1,5 +1,5 @@
 <h1>Patron by id views/recipes/show.erb</h1>
-    <td>Recipe Name :<%=recipe.name%></td>
+    <td>Recipe Name :<%=@recipes.name%></td>
     </tr>  
 </table>
 <table> 
@@ -11,15 +11,15 @@
     <td>Grind</td>  
     </tr>
         <tr>
-        <td> <%= recipe.brew_method %> </td>
-        <td> <%= recipe.water_weight %>ml</td>
-        <td> <%= recipe.water_temp %> </td>
-        <td> <%= recipe.grams %> </td>
-        <td> <%= recipe.grind %> </td>
+        <td> <%= @recipes.brew_method %> </td>
+        <td> <%= @recipes.water_weight %>ml</td>
+        <td> <%= @recipes.water_temp %> </td>
+        <td> <%= @recipes.grams %> </td>
+        <td> <%= @recipes.grind %> </td>
         </tr>
     <tr>
     <td>Comments:    </td>
-    <td>  <%= recipe.info %> </td>
+    <td>  <%= @recipes.info %> </td>
     </tr>
 </table>
 
