@@ -3,6 +3,7 @@ require_relative('../db/sql_runner')
 class Recipe
     
     attr_reader( :id, :name, :brew_method, :grams, :water_temp, :water_weight, :grind, :info, :ratio, :brew_time )
+    attr_accessor( :ratio)
 
 def initialize( options )
     @id = options['id'].to_i if options['id']   # NO$ STRING / INT
@@ -21,7 +22,7 @@ c = Recipe.new({"name" => "hey", "brew_method" => "V60", "grams" => 20, "water_t
 
 #DONE
 def save() #OK
-    #@ratio =2 # @water_weight / @grams
+    @ratio =  @water_weight / @grams
     sql = "INSERT INTO recipes (name,brew_method,grams,water_temp,water_weight,grind,ratio,info) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING id"
     values = [@name,@brew_method,@grams,@water_temp,@water_weight,@grind,@ratio,@info]
     results = SqlRunner.run(sql,values)
@@ -29,8 +30,8 @@ def save() #OK
 end #save
 
 def update()
-    sql = "UPDATE recipes SET (name,brew_method,grams,water_temp,water_weight,grind) = ($1,$2,$3,$4,$5,$6) WHERE id = $7"
-    values = [@name, @brew_method,@grams,@water_temp,@water_weight,@grind,@id]
+    sql = "UPDATE recipes SET (name,brew_method,grams,water_temp,water_weight,grind,ratio) = ($1,$2,$3,$4,$5,$6,$7) WHERE id = $8"
+    values = [@name, @brew_method,@grams,@water_temp,@water_weight,@grind,@ratio,@id]
     SqlRunner.run(sql, values)
   end
 
@@ -64,9 +65,6 @@ def average_bean_rating
     sql = "SELECT AVG(bean_rating) FROM reviews
     WHERE recipe_id = $1"
     values = [@id]
-    p "----recipe  @id------"
-    p @id
-    p "----------"
     avg_br = SqlRunner.run(sql,values)
     return avg_br[0]['avg'].to_f
 end #average_bean_rating

@@ -18,8 +18,8 @@ end
 
 #create - POST - NEW LISTING
 post '/recipes' do
-  new_recipe = Recipe.new(params)
-  new_recipe.save
+  recipe = Recipe.new(params)
+  recipe.save
   redirect to ("/recipes")
 end
 
@@ -38,6 +38,12 @@ get '/recipes/:id/edit' do
 # update
 post '/recipes/:id' do
   recipe = Recipe.new(params)
+  p "------"
+  p recipe.grams.to_i
+  p recipe.water_weight.to_i
+  recipe.ratio = recipe.water_weight.to_i / recipe.grams.to_i
+  p "---ratio---"
+  p recipe.ratio
   recipe.update
   redirect to "/recipes/#{(params['id'])}"
 end
