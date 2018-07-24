@@ -1,16 +1,13 @@
-<h1> Welcome to Reviews viewer in reviews/index.erb </h1>
+<h4> Welcome to Reviews viewer in reviews/index.erb </h4>
 <fieldset>
 <legend><h3>Create A New Review</h3></legend> 
 <button><h3><a href="/reviews/new">NEW</h3></a></button><br>
 </fieldset>
-<br>
 <fieldset>
-<h2> Review List </h2>
-</fieldset>
-
+<legend><h2>Review List</h2></legend>
 <% for review in @reviews %>
 <fieldset>
-Review id: <%=review.id%>
+<legend><b>Review id: <%=review.id%></b></legend>
 <br><table>
 <tr>
     <td>Review :<%=review.review%></td></tr>  

@@ -1,37 +1,31 @@
-<h1> Welcome to Recipes viewer in recipes/index.erb </h1>
+<h4> Welcome to Recipes viewer in recipes/index.erb </h4>
 <fieldset>
 <legend><h3>Create A New Recipe</h3></legend> 
 <button><h3><a href="/recipes/new">NEW</h3></a></button><br>
 </fieldset>
-<br>
 <fieldset>
 <legend><h2>Recipe List</h2></legend>
-
 <% for recipe in @recipes %>
-<fieldset><legend>Recipe id: <%= recipe.id %> </legend>
-<br>
-    <td>Recipe Name :<%=recipe.name%></td>
-<table> 
-    <td>Method</td>
-    <td>Water</td>
-    <td>Temp</td>
-    <td>Grams</td>
-    <td>Grind</td>  
-    </tr>
+    <fieldset><legend><b>Recipe Name: </b><%=recipe.name%></legend>
+        <table>
+            <tr>
+            <td><b>Method</td>
+            <td><b>Water</td>
+            <td><b>Temp</td>
+            <td><b>Grams</td>
+            <td><b>Grind</td>  
+            <td><b>Comments</td>  
+            </tr></b>
         <tr>
         <td> <%= recipe.brew_method %> </td>
         <td> <%= recipe.water_weight %>ml</td>
         <td> <%= recipe.water_temp %> </td>
         <td> <%= recipe.grams %> </td>
         <td> <%= recipe.grind %> </td>
+        <td> <%= recipe.info %> </td>
         </tr>
-    <tr>
-    <td>Comments:    </td>
-    <td>  <%= recipe.info %> </td>
-    </tr>
-    <td>Average Rating<%= recipe.average_bean_rating%></td>
-    <tr><td><button><a href="/recipes/<%= recipe.id %>">SELECT</a></button></td></tr>
-</table>
-</fieldset>
-<br>
+            <td><b>Average Rating <%= recipe.average_bean_rating%></b> </td>
+            <tr><td><button><a href="/recipes/<%= recipe.id %>">SELECT</a></button></td></tr>
+    </table>
+    </fieldset><br>
 <% end%>
