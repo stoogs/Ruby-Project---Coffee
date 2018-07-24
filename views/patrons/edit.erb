@@ -4,13 +4,11 @@
 <fieldset>
 <legend> Patron Form '<%= @patrons.username %>'</legend>
     <label for="patron-name">Patron name</label>
-        <input type="text" id="patron-name" name="username" placeholder="Enter your name" />
+        <input type="text" id="patron-name" value="<%=@patrons.username%>"name="username" placeholder="Enter your name" />
     <br>
         <label for="bio">Biography</label>
-            <input type="text" id="bio" name="bio" placeholder="Biography" />
+            <input type="text" id="bio" value="<%=@patrons.bio%>"name="bio" placeholder="Biography" />
         <form<input type="submit" value="Edit"></form>
         <input type ="submit"></button>
 </fieldset>
-
-
 </p>

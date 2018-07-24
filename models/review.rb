@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner.rb')
-# require('pry-byebug')
+require('pry-byebug')
 class Review
 
 attr_reader :id, :review, :bean_rating, :patron_id, :recipe_id
@@ -10,13 +10,17 @@ def initialize(options)
     @bean_rating = options['bean_rating']
     @patron_id = options['patron_id'].to_i
     @recipe_id = options['recipe_id'].to_i
+    puts "from browser"
+    puts options
 end #intitialize
 
 def save() #OK
-    sql = "INSERT INTO reviews (review, bean_rating) VALUES ($1,$2) RETURNING id"
-    values = [@review,@bean_rating]
+    sql = "INSERT INTO reviews (review, bean_rating, patron_id, recipe_id) VALUES ($1,$2, $3, $4) RETURNING id"
+    values = [@review,@bean_rating, @patron_id, @recipe_id]
     results = SqlRunner.run(sql,values)
     @id = results.first['id'].to_i
+    binding.pry
+
 end #save
 
 def recipe #OK
