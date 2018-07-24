@@ -1,19 +1,25 @@
 <h1> Welcome to Reviews viewer in reviews/index.erb </h1>
--------------------------------------<br>
-Create A New Review : <button><a href="/reviews/new">NEW</a></button><br>
--------------------------------------
+<fieldset>
+<legend><h3>Create A New Review</h3></legend> 
+<button><h3><a href="/reviews/new">NEW</h3></a></button><br>
+</fieldset>
 <br>
+<fieldset>
 <h2> Review List </h2>
-<br>
+</fieldset>
+
 <% for review in @reviews %>
+<fieldset>
 Review id: <%=review.id%>
 <br><table>
-<tr>-----------------------------------------------------------------------------------
+<tr>
     <td>Review :<%=review.review%></td></tr>  
     <td>Rating :<%=review.bean_rating%></td>
     <tr><td><button><a href="/reviews/<%= review.id %>">SELECT</a></button></td></tr>
 </table>
------------------------------------------------------------------------------------
+
+</fieldset>
 <br><br>
 <% end%>
+
 

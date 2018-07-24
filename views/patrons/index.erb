@@ -1,8 +1,10 @@
 <h1> Welcome to Patron viewer in patrons/index.erb </h1>
 <fieldset>
-Create A New Patron : <button><a href="/patrons/new">NEW</a></button><br>
+<legend><h3> Create A New Patron</h3> </legend>
+<button><h3><a href="/patrons/new">NEW</a></h3></button><br>
 </fieldset>
-<h2> Patron List </h2>
+
+<fieldset><legend><h2>Patron List</h2></legend>
 <% for patron in @patrons %>
 <fieldset>
 <table>

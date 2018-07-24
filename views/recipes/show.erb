@@ -1,4 +1,5 @@
 <h1>Patron by id views/recipes/show.erb</h1>
+<filedset>
     <td>Recipe Name :<%=@recipes.name%></td>
     </tr>  
 </table>
@@ -22,7 +23,7 @@
     <td>  <%= @recipes.info %> </td>
     </tr>
 </table>
-
+</fieldset>
 
 <form action="/recipes/<%= @recipes.id %>/edit"></a><input type="submit" value="Edit"></form>
 <form action="/recipes/<%= @recipes.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

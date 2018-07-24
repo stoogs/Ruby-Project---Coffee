@@ -2,7 +2,7 @@
 <fieldset>
 <legend>Review id: <%=@reviews.id%> </legend>
 <p>Review: <%=@reviews.review%> </p>
-<p>Bean Rating <%=@reviews.bean_rating%> </p>
+<p>Bean Rating: <%=@reviews.bean_rating%> </p>
 <form action="/reviews/<%= @reviews.id %>/edit"></a><input type="submit" value="Edit"></form>
 </fieldset>
 <form action="/reviews/<%= @reviews.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
