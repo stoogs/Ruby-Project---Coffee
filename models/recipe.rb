@@ -62,7 +62,7 @@ end #self delete all
 #pass a recipe and calculate in SQL
 def average_bean_rating
     sql = "SELECT AVG(bean_rating) FROM reviews
-    WHERE id = $1"
+    WHERE recipe_id = $1"
     values = [@id]
     p "----recipe  @id------"
     p @id
