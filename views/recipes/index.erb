@@ -36,3 +36,6 @@ Recipe id: <%= recipe.id %>
 -----------------------------------------------------------------------------------
 <br></br>
 <% end%>
+<% for review in @reviews %>
+Average Review: <%= review.average_bean_rating %>
+<%end%>
