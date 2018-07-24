@@ -13,8 +13,8 @@ def initialize(options)
 end #intitialize
 
 def save() #OK
-    sql = "INSERT INTO reviews (review, bean_rating) VALUES ($1,$2,$3,$4) RETURNING id"
-    values = [@review,@bean_rating,@patron_id, @recipe_id]
+    sql = "INSERT INTO reviews (review, bean_rating) VALUES ($1,$2) RETURNING id"
+    values = [@review,@bean_rating]
     results = SqlRunner.run(sql,values)
     @id = results.first['id'].to_i
 end #save

@@ -14,6 +14,8 @@ end
 # new  - SHOW ALL ITEMS
 get '/reviews/new' do
   @reviews = Review.show_all
+  @recipes = Recipe.show_all
+  @patrons = Patron.show_all
   erb( :"reviews/new")
 end
 

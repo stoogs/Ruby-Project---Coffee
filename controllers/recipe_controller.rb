@@ -5,17 +5,18 @@ also_reload('../models/*')
 #home
 
 get '/recipes' do
+  @reviews = Review.show_all
   @recipes = Recipe.show_all
   erb( :"recipes/index")
 end
 
-# new - SHOW ALL ITEMS
+# new - GET - SHOW ALL ITEMS
 get '/recipes/new' do
   @recipes = Recipe.show_all
   erb( :"recipes/new")
 end
 
-#create - NEW LISTING
+#create - POST - NEW LISTING
 post '/recipes' do
   new_recipe = Recipe.new(params)
   new_recipe.save
