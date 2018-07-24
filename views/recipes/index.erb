@@ -3,17 +3,18 @@
 Create A New Recipe : <button><a href="/recipes/new">NEW</a></button><br>
 -------------------------------------
 <br>
+<fieldset>
 <h2> Recipe List </h2>
-<br>
+</fieldset>
+<fieldset>
 <% for recipe in @recipes %>
+Average Bean Rating: <%= p recipe.average_bean_rating %>
 Recipe id: <%= recipe.id %> 
-<br><table>
-<tr>-----------------------------------------------------------------------------------
+<br>
+</fieldset>
+<fieldset>
     <td>Recipe Name :<%=recipe.name%></td>
-    </tr>  
-</table>
 <table> 
-    <tr>-----------------------------------------------------------------------------------
     <td>Method</td>
     <td>Water</td>
     <td>Temp</td>
@@ -31,11 +32,15 @@ Recipe id: <%= recipe.id %>
     <td>Comments:    </td>
     <td>  <%= recipe.info %> </td>
     </tr>
+    <td>Average Rating<%= recipe.average_bean_rating%></td>
     <tr><td><button><a href="/recipes/<%= recipe.id %>">SELECT</a></button></td></tr>
 </table>
------------------------------------------------------------------------------------
+</fieldset>
+
 <br></br>
 <% end%>
+
 <% for review in @reviews %>
+<%= p review.id%>
 Average Review: <%= review.average_bean_rating %>
 <%end%>

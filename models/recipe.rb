@@ -59,6 +59,18 @@ def self.delete_all #OK
     SqlRunner.run(sql)
 end #self delete all
 
+#pass a recipe and calculate in SQL
+def average_bean_rating
+    sql = "SELECT AVG(bean_rating) FROM reviews
+    WHERE id = $1"
+    values = [@id]
+    p "----recipe  @id------"
+    p @id
+    p "----------"
+    avg_br = SqlRunner.run(sql,values)
+    return avg_br[0]['avg'].to_f
+end #average_bean_rating
+
 # def link_recipe_id_to_person  #search for recipes by person id
 #     sql = "SELECT recipes.* FROM recipes
 #     INNER JOIN reviews

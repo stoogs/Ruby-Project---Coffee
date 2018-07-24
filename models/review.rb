@@ -41,7 +41,7 @@ def update() #TO TEST
     SqlRunner.run(sql, values)
 end
 
-#pass a recipe and calculate in SQL
+#pass a recipe and calculate in SQL - ORIGINAL
 def average_bean_rating
     sql = "SELECT AVG(bean_rating) FROM reviews
     WHERE recipe_id = $1"
@@ -75,6 +75,8 @@ def self.delete_all #OK
     SqlRunner.run(sql)
     #is this a good idea?
 end
+
+
 
 #EXTENSION FUNCTIONS
 
