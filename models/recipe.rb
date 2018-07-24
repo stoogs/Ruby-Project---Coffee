@@ -9,9 +9,9 @@ def initialize( options )
     @id = options['id'].to_i if options['id']   # NO$ STRING / INT
     @name = options['name']                     # $1  STRING
     @brew_method = options['brew_method']       # $2  STRING
-    @grams = options['grams']                   # $3  INT
+    @grams = options['grams'].to_i                   # $3  INT
     @water_temp = options['water_temp']         # $4  INT
-    @water_weight = options['water_weight']     # $5  INT
+    @water_weight = options['water_weight'].to_i     # $5  INT
     @grind = options['grind']                   # $6  STRING
     @brew_time = options['brew_time']           # NO$ INT
     @ratio = options['ratio']                   # $7  INT
