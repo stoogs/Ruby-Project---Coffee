@@ -10,8 +10,6 @@ def initialize(options)
     @bean_rating = options['bean_rating']
     @patron_id = options['patron_id'].to_i
     @recipe_id = options['recipe_id'].to_i
-    puts "from browser"
-    puts options
 end #intitialize
 
 def save() #OK
@@ -19,8 +17,6 @@ def save() #OK
     values = [@review,@bean_rating, @patron_id, @recipe_id]
     results = SqlRunner.run(sql,values)
     @id = results.first['id'].to_i
-    binding.pry
-
 end #save
 
 def recipe #OK

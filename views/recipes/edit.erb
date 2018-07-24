@@ -9,14 +9,14 @@
     <label for="brew-method">Brew Method</label>
     <input type="text" id="brew-method" name="brew_method" value="<%=@recipes.brew_method%>" placeholder="Whats Your Brew Method" />
     <br>
-    <label for="grams">Grams</label>
-    <input type="number" id="recipe-name" name="grams" value="<%=@recipes.grams%>" placeholder="Grams Of Coffee" />
+    <label for="grams-id">Grams</label>
+    <input type="number" id="grams-id" name="grams" value="<%=@recipes.grams%>" min="1" placeholder="Grams Of Coffee" />
     <br>
     <label for="water-temp">Water Temp</label>
-    <input type="number" id="water-temp" name="water_temp" value="<%=@recipes.water_temp%>" placeholder="Water Temperature" />
+    <input type="number" id="water-temp" name="water_temp" value="<%=@recipes.water_temp%>" min="0" max="100" placeholder="Water Temperature" />
     <br>
     <label for="water-weight">Water in ml.</label>
-    <input type="number" id="water-weight" name="water_weight" value="<%=@recipes.water_weight%>" placeholder="Water in ml." />
+    <input type="number" id="water-weight" name="water_weight" value="<%=@recipes.water_weight%>" min="1" placeholder="Water in ml." />
      <br>
     <label for="grind">Grind Level</label>
     <input type="text" id="grind" name="grind" value="<%=@recipes.grind%>"placeholder="Grind Level" />
