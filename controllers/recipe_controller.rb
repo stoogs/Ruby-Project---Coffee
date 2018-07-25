@@ -2,7 +2,47 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/recipe')
 also_reload('../models/*')
+require('pry-byebug')
 #home
+
+#V60 page
+
+get '/equipment/v60' do
+  category = "V60"
+  @recipes = Recipe.gear(category)
+  erb( :"/recipes/equipment/v60")
+end
+
+get '/equipment/chemex' do
+  category = "Chemex"
+  @recipes = Recipe.gear(category)
+  erb( :"/recipes/equipment/chemex")
+end
+
+get '/equipment/frenchpress' do
+  category = "French Press"
+  @recipes = Recipe.gear(category)
+  erb( :"/recipes/equipment/frenchpress")
+end
+
+get '/equipment/aeropress' do
+  category = "Aeropress"
+  @recipes = Recipe.gear(category)
+  erb( :"/recipes/equipment/aeropress")
+end
+
+get '/equipment/kalitawave' do
+  category = "Kalita Wave"
+  @recipes = Recipe.gear(category)
+  erb( :"/recipes/equipment/kalitawave")
+end
+
+get '/equipment/coldbrew' do
+  category = "Cold Brew"
+  @recipes = Recipe.gear(category)
+  erb( :"/recipes/equipment/coldbrew")
+end
+
 
 get '/recipes' do
   @reviews = Review.show_all
@@ -34,16 +74,15 @@ get '/recipes/:id/edit' do
   @recipes = Recipe.find_by_id(params['id'])
   erb( :"recipes/edit")
   end
-
+#V60 page
+get '/equipment/v60' do
+recipes = Recipe.find_by_equipment
+erb( :"/recipes/v60")
+end
 # update
 post '/recipes/:id' do
   recipe = Recipe.new(params)
-  p "------"
-  p recipe.grams.to_i
-  p recipe.water_weight.to_i
   recipe.ratio = recipe.water_weight.to_i / recipe.grams.to_i
-  p "---ratio---"
-  p recipe.ratio
   recipe.update
   redirect to "/recipes/#{(params['id'])}"
 end
@@ -53,4 +92,13 @@ post '/recipes/:id/delete' do
   recipe = Recipe.find_by_id(params['id'])
   recipe.delete_by_id
   redirect to '/recipes'
+end
+
+
+
+get '/equipment/:model' do 
+  model = params[:model]
+  @recipes = Recipe.gear(model)
+  erb_file = "/recipies/equipment" + model
+  erb (model.to_sym)
 end

@@ -32,7 +32,7 @@ get '/reviews/:id' do
   erb( :"reviews/show" )
 end
 
-# edit - EDIT BY ID
+# edit - EDIT BY IDgit commit -m ""
 get '/reviews/:id/edit' do
   @reviews = Review.find_by_id(params['id'])
   erb( :"reviews/edit")

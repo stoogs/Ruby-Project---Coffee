@@ -45,6 +45,15 @@ end #find
 def self.show_all #OK
     sql = "SELECT * FROM recipes"
     results_array_of_hashes = SqlRunner.run(sql)
+    p results_array_of_hashes
+    return results_array_of_hashes.map {|hash| Recipe.new(hash)}
+    #sends back new Recipe objects, created from hash values, from table search 
+end #self show all
+
+def self.gear(category) #OK
+    sql = "SELECT * FROM recipes WHERE brew_method = $1"
+    values = [category]
+    results_array_of_hashes = SqlRunner.run(sql,values)
     return results_array_of_hashes.map {|hash| Recipe.new(hash)}
     #sends back new Recipe objects, created from hash values, from table search 
 end #self show all

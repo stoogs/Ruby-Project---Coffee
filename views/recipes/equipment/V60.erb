@@ -1,0 +1,31 @@
+V60 Recipes
+<fieldset>
+<legend><h2>Recipe List</h2></legend>
+<% for recipe in @recipes %>
+    <% if recipe.brew_method == "V60" %>
+    <fieldset><legend><b>Recipe Name: </b><%=recipe.name%></legend>
+        <table>
+            <tr>
+            <td><b>Method</td>
+            <td><b>Water</td>
+            <td><b>Temp</td>
+            <td><b>Grams</td>
+            <td><b>Grind</td>  
+            <td><b>Ratio</td>  
+            <td><b>Comments</td>  
+            </tr></b>
+        <tr>
+        <td> <%= recipe.brew_method %> </td>
+        <td> <%= recipe.water_weight %>ml</td>
+        <td> <%= recipe.water_temp %> </td>
+        <td> <%= recipe.grams %> </td>
+        <td> <%= recipe.grind %> </td>
+        <td> <%= recipe.ratio %> </td>
+        <td> <%= recipe.info %> </td>
+        </tr>
+            <td><b>Average Rating <%= recipe.average_bean_rating%></b> </td>
+            <tr><td><button><a href="/recipes/<%= recipe.id %>">SELECT</a></button></td></tr>
+    </table>
+    </fieldset><br>
+    <% end %>
+<% end%>
