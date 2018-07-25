@@ -4,8 +4,10 @@
 <fieldset>
 <legend> Edit Review id: <%= @reviews.id %></legend>
     <label for="review">Review</label>
-    <input type="text" id="review" value="<%=@reviews.review%>" name="review" placeholder="Review..." />
+    <input type="text" id="review" value="<%=@reviews.review%>" 
+    name="review" placeholder="Review..." size="<%= @reviews.review.length.to_i %>"/>
     <br>
+
     </label>
       <label for="bean-rating">Rating</label>
       <select id="bean-rating" name="bean_rating">

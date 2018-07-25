@@ -27,7 +27,8 @@
         <td> <%= recipe.info %> </td>
         </tr>
             <td><b>Average Rating <%= recipe.average_bean_rating%></b> </td>
-            <tr><td><button><a href="/recipes/<%= recipe.id %>">SELECT</a></button></td></tr>
+            <tr><td><button><a href="/recipes/<%= recipe.id %>">SELECT</a></button></td></tr>             
+            <tr><td><button><a href="/reviews/new">Create A Review</a></button><tr></td><br>        
     </table>
     </fieldset><br>
 <% end%>

@@ -4,6 +4,7 @@ require_relative('../models/review')
 require_relative('../models/recipe')
 require_relative('../models/patron')
 also_reload('../models/*')
+require('pry-byebug')
 #home
 
 get '/reviews' do
@@ -13,11 +14,23 @@ end
 
 # new  - SHOW ALL ITEMS
 get '/reviews/new' do
+@new_id = params['id']
   # @reviews = Review.show_all
   @recipes = Recipe.show_all
   @patrons = Patron.show_all
+#binding.pry
   erb( :"reviews/new")
 end
+# new  - SHOW ALL ITEMS
+get '/reviews/new/:id' do
+  @new_id = params['id']
+    # @reviews = Review.show_all
+    @recipes = Recipe.show_all
+    @patrons = Patron.show_all
+  #binding.pry
+    erb( :"reviews/new")
+  end
+
 
 #create - NEW LISTING
 post '/reviews' do

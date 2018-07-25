@@ -16,6 +16,7 @@
   </label>
   <label>
     Select a recipe:
+    <%=  @new_id %>
     <select name="recipe_id">
       <% for recipe in @recipes %>
       <option value="<%= recipe.id %>"><%= recipe.name %></option>

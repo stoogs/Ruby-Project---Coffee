@@ -66,6 +66,7 @@ end
 # show - LISTING BY ID
 get '/recipes/:id' do
   @recipes = Recipe.find_by_id(params['id'])
+  @id_pass = (params['id'])
   erb( :"recipes/show" )
 end
 
@@ -93,8 +94,6 @@ post '/recipes/:id/delete' do
   recipe.delete_by_id
   redirect to '/recipes'
 end
-
-
 
 get '/equipment/:model' do 
   model = params[:model]
