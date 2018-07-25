@@ -16,10 +16,11 @@
   </label>
   <label>
     Select a recipe:
-    <%=  @new_id %>
     <select name="recipe_id">
       <% for recipe in @recipes %>
+        <% if recipe.id.to_i == @new_id.to_i %>
       <option value="<%= recipe.id %>"><%= recipe.name %></option>
+      <% end %>
       <% end %>
     </select>
   </label>
@@ -38,6 +39,4 @@
   <input class="btn btn--action" type='submit' value="Submit
   Review">
 </form>
-
-
 </fieldset>

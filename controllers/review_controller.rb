@@ -14,17 +14,18 @@ end
 
 # new  - SHOW ALL ITEMS
 get '/reviews/new' do
-@new_id = params['id']
-  # @reviews = Review.show_all
+  @new_id = params['id']
+  @reviews = Review.find_by_id(params['id'])
   @recipes = Recipe.show_all
-  @patrons = Patron.show_all
+  @patrons = Patron.show_all 
 #binding.pry
   erb( :"reviews/new")
 end
+
 # new  - SHOW ALL ITEMS
 get '/reviews/new/:id' do
-  @new_id = params['id']
-    # @reviews = Review.show_all
+    @new_id = params['id']
+    @reviews = Review.show_all
     @recipes = Recipe.show_all
     @patrons = Patron.show_all
   #binding.pry

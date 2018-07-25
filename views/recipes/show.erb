@@ -21,7 +21,6 @@
         </tr>
         <td><b>Average Rating <%= @recipes.average_bean_rating%></b> </td>     
         <tr>
-<td><button><a href="/reviews/new">Write A Review</a></button></td> 
 
 <td><form action="/reviews/new/<%= @recipes.id %>"></a><input type="submit" value="New"></form><td>
 <td><form action="/recipes/<%= @recipes.id %>/edit"></a><input type="submit" value="Edit"></form><td>
