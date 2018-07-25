@@ -5,8 +5,6 @@ also_reload('../models/*')
 require('pry-byebug')
 #home
 
-#V60 page
-
 get '/equipment/v60' do
   category = "V60"
   @recipes = Recipe.gear(category)
@@ -63,7 +61,7 @@ post '/recipes' do
   redirect to ("/recipes")
 end
 
-# show - LISTING BY ID
+# show - LISTING BY ID                     
 get '/recipes/:id' do
   @recipes = Recipe.find_by_id(params['id'])
   @id_pass = (params['id'])
@@ -75,11 +73,8 @@ get '/recipes/:id/edit' do
   @recipes = Recipe.find_by_id(params['id'])
   erb( :"recipes/edit")
   end
-#V60 page
-get '/equipment/v60' do
-recipes = Recipe.find_by_equipment
-erb( :"/recipes/v60")
-end
+
+
 # update
 post '/recipes/:id' do
   recipe = Recipe.new(params)
@@ -98,6 +93,6 @@ end
 get '/equipment/:model' do 
   model = params[:model]
   @recipes = Recipe.gear(model)
-  erb_file = "/recipies/equipment" + model
-  erb (model.to_sym)
+  erb_file = "/recipes/equipment" + model
+ erb( :"erb_file".to_s)
 end
