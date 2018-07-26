@@ -1,6 +1,8 @@
 require('sinatra')
 require('sinatra/contrib/all')
+# require_relative('../models/patron')
 require_relative('../models/recipe')
+# require_relative('../models/review')
 also_reload('../models/*')
 require('pry-byebug')
 #home
@@ -43,7 +45,8 @@ end
 
 
 get '/recipes' do
-  @reviews = Review.show_all
+  # @patrons = Patron.show_all
+  # @reviews = Review.show_all
   @recipes = Recipe.show_all
   erb( :"recipes/index")
 end

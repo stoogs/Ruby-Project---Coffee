@@ -49,9 +49,9 @@ body {
 <body>
 
 <div class="topnav">
-    <a href="/patrons"> Patrons </a>
-    <a href="/recipes"> Recipes </a>
-    <a href="/reviews"> Reviews </a>
+    <a href="/patrons"> Patrons (<%= @@patron_length.length %>)</a>
+    <a href="/recipes"> Recipes (<%= @@recipe_length.length %>)</a>
+    <a href="/reviews"> Reviews (<%= @@review_length.length %>)</a>
 </div>
 </body>
   <%= yield %>

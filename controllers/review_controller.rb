@@ -9,16 +9,17 @@ require('pry-byebug')
 
 get '/reviews' do
   @reviews = Review.show_all
+  # @patrons = Patron.show_all
+  # @recipes = Recipe.show_all
   erb( :"/reviews/index")
 end
 
 # new  - SHOW ALL ITEMS
 get '/reviews/new' do
   @new_id = nil
-  # @reviews = Review.find_by_id(params['id'])
+  @reviews = Review.show_all
   @recipes = Recipe.show_all
   @patrons = Patron.show_all 
-#binding.pry
   erb( :"reviews/new")
 end
 
@@ -28,7 +29,6 @@ get '/reviews/new/:id' do
     @reviews = Review.show_all
     @recipes = Recipe.show_all
     @patrons = Patron.show_all
-  #binding.pry
     erb( :"reviews/new")
 end
 
