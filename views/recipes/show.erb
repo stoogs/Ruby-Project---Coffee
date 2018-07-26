@@ -1,36 +1,35 @@
 <h4>Patron by id views/recipes/show.erb</h4>
-    <fieldset><legend><b>Recipe Name: </b><%=@recipes.name%>  </legend>
-        <table border = "0">
-            <tr>
+
+<fieldset><legend><b>Recipe Name: </b><%=@recipes.name%>  </legend>
+    <table border = "0">
+        <tr>
             <td width = "100" align = "center"><b>Method</td>
             <td width = "75" align = "center"><b>Water</td>
             <td width = "50" align = "center"><b>Temp</td>
             <td width = "50" align = "center"><b>Grams</td>
             <td width = "75" align = "center" ><b>Grind</td>  
-            <td align = "center"><b>Ratio</td>  
-            
-            </tr></b>
+            <td width = "50" align = "center"><b>Ratio</td>  
+        </tr></b>
         <tr>
-        <td align = "center"> <%= @recipes.brew_method %> </td>
-        <td align = "center"> <%= @recipes.water_weight %>ml</td>
-        <td align = "center"> <%= @recipes.water_temp %> </td>
-        <td align = "center"> <%= @recipes.grams %> </td>
-        <td align = "center"> <%= @recipes.grind %> </td>
-        <td align = "center"> <%= @recipes.ratio %> </td>
-       
+            <td align = "center"> <%= @recipes.brew_method %> </td>
+            <td align = "center"> <%= @recipes.water_weight %>ml</td>
+            <td align = "center"> <%= @recipes.water_temp %> </td>
+            <td align = "center"> <%= @recipes.grams %> </td>
+            <td align = "center"> <%= @recipes.grind %> </td>
+            <td align = "center"> <%= @recipes.ratio %> </td>
         </tr>
-        <table border = "0">
-        <td width = "100" align = "center"><b>Information</td>   
-        <td width = "500" align = "center"> <%= @recipes.info %> </td>
-
-        </table>
-        <table border = "0">
+            <table border = "0">
+                <td width = "100" align = "left"><b>Information</td>   
+                <td width = "500" align = "left"> <%= @recipes.info %> </td>
+            </table>
+            <table border = "0">
         <tr>
-        <td align = "center" width = "425" ><b>Average Rating <%= @recipes.average_bean_rating%></b> </td>
+            <td align = "center" width = "425" ><b>Average Rating <%= @recipes.average_bean_rating%></b> </td>
         </tr>
-</table>
-<table border = "0">
-<td width = "150" ><form action="/reviews/new/<%= @recipes.id %>"></a><input type="submit" value="Review This Recipe"></form><td>
-<td width = "150"><form action="/recipes/<%= @recipes.id %>/edit"></a><input type="submit" value="Edit This Recipe"></form><td>
-<td width = "150"><form action="/recipes/<%= @recipes.id %>/delete" method="POST"><input type="submit" value="Delete This Recipe"></form><td>
-</table>
+    </table>
+    <table border = "0">
+        <td width = "150" ><form action="/reviews/new/<%= @recipes.id %>"></a><input type="submit" value="Review This Recipe"></form><td>
+        <td width = "150"><form action="/recipes/<%= @recipes.id %>/edit"></a><input type="submit" value="Edit This Recipe"></form><td>
+        <td width = "150"><form action="/recipes/<%= @recipes.id %>/delete" method="POST"><input type="submit" value="Delete This Recipe"></form><td>
+    </table>
+</fieldset>
