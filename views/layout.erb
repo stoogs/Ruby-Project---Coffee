@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html>
 <div class="topnav">
-<table>
-  <td><a class="active" href="/">Home</a><td>
-    <td><a href="/equipment/v60">| V60 |</a></td> 
-    <td><a href="/equipment/chemex">| Chemex |</a></td>
-    <td><a href="/equipment/frenchpress">| French Press |</a></td>
-    <td><a href="/equipment/aeropress">| Aeropress |</a></td> 
-    <td><a href="/equipment/kalitawave">| Kalita Wave |</a></td> 
-     <td><a href="/equipment/coldbrew">| Cold Brew |</a></td>
-    </table>
-    </div>
+
+</div>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/style.css"> 
 <style>
 /* https://coolors.co/8f2a2b-a8763e-f7f3e3-ecf0f1-2b2118 */
 body {
@@ -28,7 +20,7 @@ body {
 
 .topnav a {
   float: left;
-  color: #F7F3E3; /*anti flash website */
+  color: #F7F3E3; /*anti flash white */
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -49,9 +41,20 @@ body {
 <body>
 
 <div class="topnav">
-    <a href="/patrons"> Patrons </a>
-    <a href="/recipes"> Recipes </a>
-    <a href="/reviews"> Reviews </a>
+<table border = "0">
+    <td><a href="/">| Home |</a></td> 
+    <td><a href="/equipment/v60">| V60 |</a></td> 
+    <td><a href="/equipment/chemex">| Chemex |</a></td>
+    <td><a href="/equipment/frenchpress">| French Press |</a></td>
+    <td><a href="/equipment/aeropress">| Aeropress |</a></td> 
+    <td><a href="/equipment/kalitawave">| Kalita Wave |</a></td> 
+    <td><a href="/equipment/coldbrew">| Cold Brew |</a></td>
+<tr>
+    <td><a href="/patrons"> Patrons (<%= @patrons.length %>)</a></td>
+    <td><a href="/recipes"> Recipes (<%= @recipes.length %>)</a></td>
+    <td><a href="/reviews"> Reviews (<%= @reviews.length %>)</a></td>
+    </tr>
+</table>
 </div>
 </body>
   <%= yield %>

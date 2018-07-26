@@ -11,6 +11,7 @@ def initialize( options )
 end #initialize
 
 def save() #OK
+    @username = "Insert name" if @username == ""
     sql = "INSERT INTO patrons (username,bio) VALUES ($1,$2) RETURNING id"
     values = [@username, @bio]
     result = SqlRunner.run(sql, values)

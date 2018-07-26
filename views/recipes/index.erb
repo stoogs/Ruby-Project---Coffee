@@ -1,33 +1,40 @@
 <h4> Welcome to Recipes viewer in recipes/index.erb </h4>  
 <fieldset>
-<legend><h3>Create A New Recipe</h3></legend> 
+<legend align = "center" ><h3>Create A New Recipe</h3></legend> 
 <button><h3><a href="/recipes/new">NEW</h3></a></button><br>
+
 </fieldset>
 <fieldset>
-<legend><h2>Recipe List</h2></legend>
+<legend align = "center" ><h2>Recipe List (<%= @recipes.length %> Recipes)</h2></legend>
 <% for recipe in @recipes %>
-    <fieldset><legend><b>Recipe Name: </b><%=recipe.name%></legend>
-        <table>
+    <fieldset><legend align = "center"><b>Recipe Name: </b><%=recipe.name%></legend>
+        <table align = "center" border = "0" >
             <tr>
-            <td><b>Method</td>
-            <td><b>Water</td>
-            <td><b>Temp</td>
-            <td><b>Grams</td>
-            <td><b>Grind</td>  
-            <td><b>Ratio</td>  
-            <td><b>Comments</td>  
+            <td align="center" width = "150"><b>Method</td>
+            <td align="center" width = "100"><b>Water</td>
+            <td align="center" width = "50"><b>Temp</td>
+            <td align="center" width = "50"><b>Grams</td>
+            <td align="center" width = "100"><b>Grind</td>  
+            <td align="center" width = "50"><b>Ratio</td>  
+            <td align="center" width = "250"><b>Comments</td>  
             </tr></b>
         <tr>
-        <td> <%= recipe.brew_method %> </td>
-        <td> <%= recipe.water_weight %>ml</td>
-        <td> <%= recipe.water_temp %> </td>
-        <td> <%= recipe.grams %> </td>
-        <td> <%= recipe.grind %> </td>
-        <td> <%= recipe.ratio %> </td>
-        <td> <%= recipe.info %> </td>
+        <td align="center" width = "150"> <%= recipe.brew_method %> </td>
+        <td align="center" width = "100"> <%= recipe.water_weight %>ml</td>
+        <td align="center" width = "50"> <%= recipe.water_temp %>C</td>
+        <td align="center" width = "50"> <%= recipe.grams %> </td>
+        <td align="center" width = "100"> <%= recipe.grind %> </td>
+        <td align="center" width = "50"> <%= recipe.ratio %> </td>
+        <td align="center" width = "250"> <%= recipe.info %> </td>
         </tr>
-            <td><b>Average Rating <%= recipe.average_bean_rating%></b> </td>
-            <tr><td><button><a href="/recipes/<%= recipe.id %>">SELECT</a></button></td></tr>                    
+        </table>
+<table border = "0">
+  <td align="center" width = "150"><b>Comments</td>  
+   <td align="left" width = "630"> <%= recipe.info %> </td>
+   </table>
+        <table border = "0">
+            <tr><td align="center" width = "150"><b>Average Rating</td><td align="center"> <%= recipe.average_bean_rating%></b> </td></tr>
+            <tr><td align = "center"><button><a href="/recipes/<%= recipe.id %>">SELECT</a></button></td></tr>                    
     </table>
     </fieldset><br>
 <% end%>

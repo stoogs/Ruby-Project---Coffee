@@ -1,0 +1,15 @@
+require('sinatra')
+require('sinatra/contrib/all')
+require_relative('../models/review')
+require_relative('../models/recipe')
+require_relative('../models/patron')
+also_reload('../models/*')
+require('pry-byebug')
+#home
+
+get '/equipment/v60' do
+  @reviews = Review.show_all
+  @recipes = Recipe.show_all
+  @patrons = Patron.show_all
+  erb( :"/")
+end

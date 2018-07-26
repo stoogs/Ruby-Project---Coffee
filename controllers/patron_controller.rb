@@ -1,11 +1,15 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/patron')
+require_relative('../models/review')
+require_relative('../models/recipe')
 also_reload('../models/*')
 #home
 
 get '/patrons' do
   @patrons = Patron.show_all
+  @reviews = Review.show_all
+  @recipes = Recipe.show_all
   erb( :"/patrons/index")
 end
 
