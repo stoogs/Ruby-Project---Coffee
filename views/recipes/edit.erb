@@ -39,7 +39,8 @@
         </select>
       <br>
         <label for="info">Extra Information: </label>
-        <input type="text" id="info" name="info" value="<%=@recipes.info%>"placeholder="Extra Information" size="<%= @recipes.info.length.to_i + 50 %>"/>
+        <input type="text" id="info" size="<%= @recipes.info.length.to_i + 50 %>" name="info" value="<%=@recipes.info%>" placeholder="Extra Information" />
         <form<input type="submit" value="Edit"></form>
         <input type ="submit"></button>
 </fieldset>
+

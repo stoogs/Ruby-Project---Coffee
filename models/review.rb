@@ -35,7 +35,7 @@ def patron #OK
     return Patron.new(results.first) #returns hash in 1 deep array
 end #patron
 
-def update() #TO TEST
+def update() #OK
     sql = "UPDATE reviews SET (review,bean_rating) = ($1,$2) WHERE id = $3"
     values = [@review,@bean_rating,@id]
     SqlRunner.run(sql, values)
