@@ -4,27 +4,35 @@ Chemex Recipes
 <% for recipe in @recipes %>
     <% if recipe.brew_method == "Chemex" %>
     <fieldset><legend><b>Recipe Name: </b><%=recipe.name%></legend>
-        <table>
+           <table border = "0">
             <tr>
-            <td><b>Method</td>
-            <td><b>Water</td>
-            <td><b>Temp</td>
-            <td><b>Grams</td>
-            <td><b>Grind</td>  
-            <td><b>Ratio</td>  
-            <td><b>Comments</td>  
+            <td width = "100" align = "center"><b>Method</td>
+            <td width = "75" align = "center"><b>Water</td>
+            <td width = "50" align = "center"><b>Temp</td>
+            <td width = "50" align = "center"><b>Grams</td>
+            <td width = "75" align = "center" ><b>Grind</td>  
+            <td align = "center"><b>Ratio</td>  
+            
             </tr></b>
         <tr>
-        <td> <%= recipe.brew_method %> </td>
-        <td> <%= recipe.water_weight %>ml</td>
-        <td> <%= recipe.water_temp %> </td>
-        <td> <%= recipe.grams %> </td>
-        <td> <%= recipe.grind %> </td>
-        <td> <%= recipe.ratio %> </td>
-        <td> <%= recipe.info %> </td>
+        <td align = "center"> <%= recipe.brew_method %> </td>
+        <td align = "center"> <%= recipe.water_weight %>ml</td>
+        <td align = "center"> <%= recipe.water_temp %> </td>
+        <td align = "center"> <%= recipe.grams %> </td>
+        <td align = "center"> <%= recipe.grind %> </td>
+        <td align = "center"> <%= recipe.ratio %> </td>
+       
         </tr>
-            <td><b>Average Rating <%= recipe.average_bean_rating%></b> </td>
-            <tr><td><button><a href="/recipes/<%= recipe.id %>">SELECT</a></button></td></tr>
+        <table border = "0">
+        <td width = "100" align = "center"><b>Information</td>   
+        <td width = "500" align = "center"> <%= recipe.info %> </td>
+
+        </table>
+        <table border = "0">
+        <tr>
+        <td align = "center" width = "425" ><b>Average Rating <%= recipe.average_bean_rating%></b> </td>
+        </tr>
+            <tr><td><button><a href="/recipes/<%= recipe.id %>">Select This Recipe</a></button></td></tr>
     </table>
     </fieldset><br>
     <% end %>
