@@ -14,8 +14,8 @@ end
 
 # new  - SHOW ALL ITEMS
 get '/reviews/new' do
-  @new_id = params['id']
-  @reviews = Review.find_by_id(params['id'])
+  @new_id = nil
+  # @reviews = Review.find_by_id(params['id'])
   @recipes = Recipe.show_all
   @patrons = Patron.show_all 
 #binding.pry
@@ -30,7 +30,7 @@ get '/reviews/new/:id' do
     @patrons = Patron.show_all
   #binding.pry
     erb( :"reviews/new")
-  end
+end
 
 
 #create - NEW LISTING
