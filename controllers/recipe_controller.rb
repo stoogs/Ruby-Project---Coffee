@@ -2,7 +2,12 @@ require('sinatra')
 require('sinatra/contrib/all')
 # require_relative('../models/patron')
 require_relative('../models/recipe')
+<<<<<<< HEAD
 # require_relative('../models/review')
+=======
+require_relative('../models/patron')
+require_relative('../models/review')
+>>>>>>> 4b81ea109daf96c5efb496553b8cd8c541471e1f
 also_reload('../models/*')
 require('pry-byebug')
 #home
@@ -10,44 +15,56 @@ require('pry-byebug')
 get '/equipment/v60' do
   category = "V60"
   @recipes = Recipe.gear(category)
+  @reviews = Review.show_all
+  @patrons = Patron.show_all
   erb( :"/recipes/equipment/v60")
 end
 
 get '/equipment/chemex' do
   category = "Chemex"
   @recipes = Recipe.gear(category)
+  @reviews = Review.show_all
+  @patrons = Patron.show_all
   erb( :"/recipes/equipment/chemex")
 end
 
 get '/equipment/frenchpress' do
   category = "French Press"
   @recipes = Recipe.gear(category)
+  @reviews = Review.show_all
+  @patrons = Patron.show_all
   erb( :"/recipes/equipment/frenchpress")
 end
 
 get '/equipment/aeropress' do
   category = "Aeropress"
   @recipes = Recipe.gear(category)
+  @reviews = Review.show_all
+  @patrons = Patron.show_all
   erb( :"/recipes/equipment/aeropress")
 end
 
 get '/equipment/kalitawave' do
   category = "Kalita Wave"
   @recipes = Recipe.gear(category)
+  @reviews = Review.show_all
+  @patrons = Patron.show_all
   erb( :"/recipes/equipment/kalitawave")
 end
 
 get '/equipment/coldbrew' do
   category = "Cold Brew"
   @recipes = Recipe.gear(category)
+  @reviews = Review.show_all
+  @patrons = Patron.show_all
   erb( :"/recipes/equipment/coldbrew")
 end
-
 
 get '/recipes' do
   # @patrons = Patron.show_all
   # @reviews = Review.show_all
   @recipes = Recipe.show_all
+  @patrons = Patron.show_all
   erb( :"recipes/index")
 end
 

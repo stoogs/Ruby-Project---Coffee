@@ -9,8 +9,13 @@ require('pry-byebug')
 
 get '/reviews' do
   @reviews = Review.show_all
+<<<<<<< HEAD
   # @patrons = Patron.show_all
   # @recipes = Recipe.show_all
+=======
+  @recipes = Recipe.show_all
+  @patrons = Patron.show_all
+>>>>>>> 4b81ea109daf96c5efb496553b8cd8c541471e1f
   erb( :"/reviews/index")
 end
 

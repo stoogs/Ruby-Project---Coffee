@@ -4,12 +4,13 @@
 <button><h3><a href="/patrons/new">NEW</a></h3></button><br>
 </fieldset>
 <fieldset>
-<legend><h2>Patron List</h2></legend>
+<legend><h2>Current Patron's </h2></legend>
+
 <% for patron in @patrons %>
 <fieldset>
-<table>
+<table >
     <tr><td>Name: <%= patron.username %></td></tr>
-    <tr><td>Bio:  <%=patron.bio%></td></tr>
+    <tr><td align="left">Bio:  <%=patron.bio%></td></tr>
     <tr><td><button><a href="/patrons/<%= patron.id %>">SELECT</a></button></td></tr>
 </table>
 </fieldset>
