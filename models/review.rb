@@ -41,15 +41,6 @@ def update() #TO TEST
     SqlRunner.run(sql, values)
 end
 
-#pass a recipe and calculate in SQL - ORIGINAL
-# def average_bean_rating
-#     sql = "SELECT AVG(bean_rating) FROM reviews
-#     WHERE recipe_id = $1"
-#     values = [@recipe_id]
-#     avg_br = SqlRunner.run(sql,values)
-#     return avg_br[0]['avg'].to_f
-# end #average_bean_rating
-
 def self.show_all #OK
     sql = "SELECT * FROM reviews"
     results_array_of_hashes = SqlRunner.run(sql)

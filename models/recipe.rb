@@ -2,8 +2,8 @@ require_relative('../db/sql_runner')
 
 class Recipe
     
-    attr_reader( :id, :name, :brew_method, :grams, :water_temp, :water_weight, :grind, :info, :ratio, :brew_time )
-    attr_accessor( :ratio)
+attr_reader( :id, :name, :brew_method, :grams, :water_temp, :water_weight, :grind, :info, :ratio, :brew_time )
+attr_accessor( :ratio)
 
 def initialize( options )
     @id = options['id'].to_i if options['id']   # NO$ STRING / INT
@@ -18,7 +18,7 @@ def initialize( options )
     @info = options['info']                     # $8  STRING
 end #initialize
 
-c = Recipe.new({"name" => "hey", "brew_method" => "V60", "grams" => 20, "water_temp" => 94, "water_weight" => 250, "grind" => "coarse", "info" => "additional info"})
+#c = Recipe.new({"name" => "hey", "brew_method" => "V60", "grams" => 20, "water_temp" => 94, "water_weight" => 250, "grind" => "coarse", "info" => "additional info"})
 
 #DONE
 def save() #OK

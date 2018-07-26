@@ -32,7 +32,6 @@ get '/reviews/new/:id' do
     erb( :"reviews/new")
 end
 
-
 #create - NEW LISTING
 post '/reviews' do
   new_review = Review.new(params)
@@ -56,7 +55,6 @@ get '/reviews/:id/edit' do
 post '/reviews/:id' do
   review = Review.new(params)
   review.update
-  #redirect to "/reviews/#{review.id()}"
   redirect to "/reviews/#{(params['id'])}"
 end
 
@@ -66,16 +64,3 @@ post '/reviews/:id/delete' do
   review.delete_by_id
   redirect to '/reviews'
 end
-# show
-# get '/reviews' do
-#   "Hello World"
-# end
-# new
-
-# create
-
-# edit
-
-# update
-
-# destroy

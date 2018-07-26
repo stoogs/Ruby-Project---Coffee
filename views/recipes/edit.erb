@@ -1,10 +1,10 @@
 <h4>Recipe by id views/recipes/edit.erb</h4>
 <p>
 <form method="POST" action="/recipes/<%=@recipes.id %>"> 
-<fieldset>
-<legend> Edit Recipe id: <%= @recipes.id %></legend>
-    <label for="recipe-name">Recipe name</label>
-    <input type="text" id="recipe-name" value="<%=@recipes.name%>" name="name" placeholder="Enter your name"  size="<%= @recipes.name.length.to_i %>"/>
+  <fieldset>
+    <legend> Edit Recipe id: <%= @recipes.id %></legend>
+      <label for="recipe-name">Recipe name</label>
+      <input type="text" id="recipe-name" value="<%=@recipes.name%>" name="name" placeholder="Enter your name"  size="<%= @recipes.name.length.to_i %>"/>
     <br>
     <label for ="brew-method">Brew Method:</label>
       <select id="brew-method" name="brew_method">

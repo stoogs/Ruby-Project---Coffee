@@ -1,8 +1,7 @@
 require_relative('../db/sql_runner')
 
 class Patron
-
-    attr_reader :id, :username, :bio
+attr_reader :id, :username, :bio
 
 def initialize( options )
     @id = options['id'].to_i if options['id']

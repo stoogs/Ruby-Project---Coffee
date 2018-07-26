@@ -1,8 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
-# require_relative('../models/patron')
 require_relative('../models/recipe')
-# require_relative('../models/review')
 also_reload('../models/*')
 require('pry-byebug')
 #home
@@ -43,10 +41,7 @@ get '/equipment/coldbrew' do
   erb( :"/recipes/equipment/coldbrew")
 end
 
-
 get '/recipes' do
-  # @patrons = Patron.show_all
-  # @reviews = Review.show_all
   @recipes = Recipe.show_all
   erb( :"recipes/index")
 end
@@ -76,7 +71,6 @@ get '/recipes/:id/edit' do
   @recipes = Recipe.find_by_id(params['id'])
   erb( :"recipes/edit")
   end
-
 
 # update
 post '/recipes/:id' do
