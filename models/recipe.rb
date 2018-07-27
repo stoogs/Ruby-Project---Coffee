@@ -30,8 +30,8 @@ def save() #OK
 end #save
 
 def update()
-    sql = "UPDATE recipes SET (name,brew_method,grams,water_temp,water_weight,grind,ratio) = ($1,$2,$3,$4,$5,$6,$7) WHERE id = $8"
-    values = [@name, @brew_method,@grams,@water_temp,@water_weight,@grind,@ratio,@id]
+    sql = "UPDATE recipes SET (name,brew_method,grams,water_temp,water_weight,grind,ratio,info) = ($1,$2,$3,$4,$5,$6,$7,$8) WHERE id = $9"
+    values = [@name, @brew_method,@grams,@water_temp,@water_weight,@grind,@ratio,@info,@id]
     SqlRunner.run(sql, values)
   end
 

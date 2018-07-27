@@ -1,9 +1,9 @@
 require_relative('../models/recipe')
 require_relative('../models/patron')
 require_relative('../models/review')
-Review.delete_all
-Recipe.delete_all
-Patron.delete_all
+# Review.delete_all
+# Recipe.delete_all
+# Patron.delete_all
 
 v60 = Recipe.new({"name" => "Scott Rao spin, xtraordinary", "brew_method" => "V60", "grams" => 16, "water_temp" => 94, "water_weight" => 250, "grind" => "salt", "info" => "This recipe is for the 4-cup French Press coffee maker, which makes 2 small mugs of coffee. Double everything and follow the same process for the 8-cup (34-oz) version."})
 fp = Recipe.new({"name" => "French press mucky mess", "brew_method" => "French Press", "grams" => 32, "water_temp" => 94, "water_weight" => 500, "grind" => "very coarse", "info" => "This recipe is for the 4-cup French Press coffee maker, which makes 2 small mugs of coffee. Double everything and follow the same process for the 8-cup (34-oz) version."})
