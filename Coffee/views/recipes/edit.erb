@@ -1,0 +1,46 @@
+<h4>Recipe by id views/recipes/edit.erb</h4>
+<p>
+<form method="POST" action="/recipes/<%=@recipes.id %>"> 
+  <fieldset>
+    <legend> Edit Recipe id: <%= @recipes.id %></legend>
+      <label for="recipe-name">Recipe name</label>
+      <input type="text" id="recipe-name" value="<%=@recipes.name%>" name="name" placeholder="Enter your name"  size="<%= @recipes.name.length.to_i %>"/>
+    <br>
+      <label for ="brew-method">Brew Method:</label>
+        <select id="brew-method" name="brew_method">
+          <option value="<%=@recipes.brew_method%>"><%=@recipes.brew_method%></option>
+          <option value="V60">V60</option>
+          <option value="Chemex">Chemex</option>
+          <option value="French Press">French Press</option>
+          <option value="Aeropress">Aeropress</option>
+          <option value="Kalita Wave">Kalita Wave</option>
+          <option value="Cold Brew">Cold Brew</option>
+        </select>
+      <br>
+        <label for="grams-id">Grams</label>
+        <input type="number" id="grams-id" name="grams" value="<%=@recipes.grams%>" min="1" placeholder="Grams Of Coffee" />
+      <br>
+        <label for="water-temp">Water Temp</label>
+        <input type="number" id="water-temp" name="water_temp" value="<%=@recipes.water_temp%>" min="0" max="100" placeholder="Water Temperature" />
+      <br>
+        <label for="water-weight">Water in ml.</label>
+        <input type="number" id="water-weight" name="water_weight" value="<%=@recipes.water_weight%>" min="1" placeholder="Water in ml." />
+      <br>
+      </label>
+      <label for ="grind-level">Grind:</label>
+        <select id="grind-level" name="grind">
+          <option value="<%=@recipes.grind%>"><%=@recipes.grind%></option>
+          <option value="Table Salt">Table salt</option>
+          <option value="Sea Salt">Sea Salt</option>
+          <option value="Medium">Medium</option>
+          <option value="Sand">Sand</option>
+          <option value="Coarse">Coarse</option>
+          <option value="Broken Glass">Broken Glass</option>
+        </select>
+      <br>
+        <label for="info">Extra Information: </label>
+        <input type="text" id="info" size="<%= @recipes.info.length.to_i + 50 %>" name="info" value="<%=@recipes.info%>" placeholder="Extra Information" />
+        <input type="submit" value="Submit"></form>
+        
+</fieldset>
+

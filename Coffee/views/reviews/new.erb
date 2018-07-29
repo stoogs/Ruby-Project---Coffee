@@ -1,0 +1,42 @@
+<h1>New Review Page </h1>
+<p>
+<form action="/reviews"method="POST" >
+
+<fieldset>
+<legend> Add Review Form</legend>
+</p>
+<form action="/patron" method="post">
+  <label>
+  Select a patron:
+    <select name="patron_id">
+      <% for patron in @patrons %>
+      <option value="<%= patron.id %>"><%= patron.username %></option>
+      <% end %>
+    </select>
+  </label>
+  <label>
+    Select a recipe:
+    <select name="recipe_id">
+      <% for recipe in @recipes %>
+        <% if @new_id == nil || recipe.id.to_i == @new_id.to_i %>
+          <option value="<%= recipe.id %>"><%= recipe.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </label>
+  <label for="review">Review</label>
+    <input type="text" id="review" name="review" placeholder="Review..." />
+     </label>
+      <label for="bean-rating">Rating</label>
+      <select id="bean-rating" name="bean_rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+   </select>
+   </label>
+  <input class="btn btn--action" type='submit' value="Submit
+  Review">
+</form>
+</fieldset>

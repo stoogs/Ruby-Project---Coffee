@@ -1,0 +1,14 @@
+<h4>Patron by id views/patron/edit.erb</h4>
+<p>
+  <form method="POST" action="/patrons/<%=@patrons.id %>">
+    <fieldset>
+      <legend><h3>Edit Patron</h3></legend>
+      <label for="patron-name">Patron name: </label>
+      <input type="text" id="patron-name" value="<%=@patrons.username%>"name="username" placeholder="Enter your name" size="<%= @patrons.username.length.to_i + 10 %>"/>
+      <br>
+      <label for="bio">Biography: </label>
+      <input type="text" id="bio" value="<%=@patrons.bio%>"name="bio" placeholder="Biography" size="<%= @patrons.bio.length.to_i + 30 %>" />
+      <form<input type="submit" value="Edit"></form>
+      <input type ="submit"></button>
+    </fieldset>
+  </p>

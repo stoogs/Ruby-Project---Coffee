@@ -1,0 +1,24 @@
+<h4> Welcome to Reviews viewer in reviews/index.erb </h4>
+<fieldset>
+    <legend><h3>Create A New Review</h3></legend> 
+        <button><h3><a href="/reviews/new">Write New Review</h3></a></button><br>
+</fieldset>
+
+<fieldset>
+    <legend><h2>Review List</h2></legend>
+        <% for review in @reviews %>
+        <fieldset>
+            <legend><b>Review id: <%=review.id%> by <%= review.patron.username %></b></legend>
+        <br>
+    <table>
+        <tr>
+            <td>Review :<%=review.review%></td></tr>  
+            <td>Rating :<%=review.bean_rating%> Beanaroonies</td>
+            <tr><td><button><a href="/reviews/<%= review.id %>">Select This Recipe</a></button></td></tr>
+    </table>
+</fieldset>
+
+<br><br>
+<% end%>
+
+

@@ -1,0 +1,39 @@
+<h4> Welcome to Recipes viewer in recipes/index.erb </h4>  
+<fieldset>
+<legend><h3>Create A New Recipe</h3></legend> 
+<button><h3><a href="/recipes/new">Create New Recipe</h3></a></button><br>
+</fieldset>
+<fieldset>
+<legend><h2>Recipe List</h2></legend>
+<% for recipe in @recipes %>
+    <fieldset><legend><b>Recipe Name: </b><%=recipe.name%> Created by: <%= p recipe.find_recipe_creator %></legend>
+        <table border = "0">
+            <tr>
+                <td width = "100" align = "center"><b>Method</td>
+                <td width = "75" align = "center"><b>Water</td>
+                <td width = "50" align = "center"><b>Temp</td>
+                <td width = "50" align = "center"><b>Grams</td>
+                <td width = "75" align = "center" ><b>Grind</td>  
+                <td width = "50" align = "center"><b>Ratio</td>  
+                <td width = "500" align = "left" ><b> Information </td>  
+            </tr></b>
+            <tr>
+                <td align = "center"> <%= recipe.brew_method %> </td>
+                <td align = "center"> <%= recipe.water_weight %>ml</td>
+                <td align = "center"> <%= recipe.water_temp %> </td>
+                <td align = "center"> <%= recipe.grams %> </td>
+                <td align = "center"> <%= recipe.grind %> </td>
+                <td align = "center"> <%= recipe.ratio %> </td>
+                <td align = "left"> <%= recipe.info %> </td>
+            </tr>
+            </table>
+        <table border = "0">
+            <tr>
+                <td align = "center" width = "500" ><b>Average Rating <%= recipe.average_bean_rating%></b> </td>
+            </tr>
+        </table border = "0">
+            <tr><td><button><a href="/recipes/<%= recipe.id %>">View This Recipe</a></button></td></tr>                    
+        </table>
+    </fieldset><br>
+<% end%>
+

@@ -1,0 +1,12 @@
+<h4>Patron by id views/patron/show.erb</h4>
+<fieldset>
+    <legend><h3>Patron id: <%=@patrons.id%></h3></legend>
+        <table>
+            <tr><td>Username: <%=@patrons.username%> <td><tr>
+            <tr><td>Bio: <%=@patrons.bio%><td><tr>
+        </table>
+        <table>
+            <tr><td width = "150"><form action="/patrons/<%= @patrons.id %>/edit"></a><input type="submit" value="Edit Details"></form>
+            <td width = "150"><form action="/patrons/<%= @patrons.id %>/delete" method="POST"><input type="submit" value="Delete Patron"></form></tr>
+        </table>
+</fieldset>

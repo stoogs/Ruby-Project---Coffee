@@ -1,0 +1,50 @@
+<h1>New Recipe Page </h1>
+<p>
+<form action="/recipes"method="POST" >
+
+<fieldset>
+  <legend> Recipe Form</legend>
+    </br>
+      <label for="recipe-name">Recipe name</label>
+        <input type="text" id="recipe-name" size ="50" name="name" placeholder="Enter your name" />
+      <br>
+      </label>
+          <label for ="brew-method">Brew Method:</label>
+            <select id="brew-method" name="brew_method">
+            <option value="Choose an option">Choose an Option</option>
+            <option value="V60">V60</option>
+            <option value="Chemex">Chemex</option>
+            <option value="French Press">French Press</option>
+            <option value="Aeropress">Aeropress</option>
+            <option value="Kalita Wave">Kalita Wave</option>
+            <option value="Cold Brew">Cold Brew</option>
+          </select>
+      </label>
+    <br>
+      <label for="grams">Grams</label>
+        <input type="number" id="recipe-name" name="grams" placeholder="Grams Of Coffee" min="0" />
+    <br>
+      <label for="water-temp">Water Temp</label>
+        <input type="number" id="water-temp" name="water_temp" placeholder="Water Temperature" min="0" max="100" />
+    <br>
+      <label for="water-weight">Water in ml.</label>
+        <input type="number" id="water-weight" name="water_weight" placeholder="Water in ml." min="0" />
+    <br>
+      </label>
+        <label for ="grind-level">Grind:</label>
+          <select id="grind-level" name="grind">
+          <option value="Choose a level">Choose alevel</option>
+          <option value="Table Salt">Table salt</option>
+          <option value="Sea Salt">Sea Salt</option>
+          <option value="Medium">Medium</option>
+          <option value="Sand">Sand</option>
+          <option value="Coarse">Coarse</option>
+          <option value="Broken Glass">Broken Glass</option>
+        </select>
+    <br>
+      <label for="info">Extra Information: </label>
+        <input type="text" id="info" name="info" size = "100" placeholder="Extra Information" />
+    <br>
+      <button type ="submit">Create New Recipe</button>
+</fieldset>
+</p>

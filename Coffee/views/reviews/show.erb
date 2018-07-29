@@ -1,0 +1,27 @@
+<h4>Review by id views/review/show.erb</h4>
+<fieldset>
+    <legend>Review id:
+        <%=@reviews.id%> by
+            <%= @reviews.patron.username %>
+    </legend>
+    <p>Review:
+        <%=@reviews.review%>
+    </p>
+    <p>Bean Rating:
+        <%=@reviews.bean_rating%>
+    </p>
+    <table>
+        <tr>
+            <td width="150">
+                <form action="/reviews/<%= @reviews.id %>/edit">
+                    </a>
+                    <input type="submit" value="Edit">
+                </form>
+            </td>
+</fieldset>
+<td width="150">
+    <form action="/reviews/<%= @reviews.id %>/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</td>
+</table>

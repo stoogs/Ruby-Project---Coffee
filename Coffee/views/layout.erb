@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+<body>
+  <div class="topnav">
+  <table>
+    <td><a class="active" href="/">Home</a><td>
+      <td><a href="/equipment/v60">| V60 |</a></td> 
+      <td><a href="/equipment/chemex">| Chemex |</a></td>
+      <td><a href="/equipment/frenchpress">| French Press |</a></td>
+      <td><a href="/equipment/aeropress">| Aeropress |</a></td> 
+      <td><a href="/equipment/kalitawave">| Kalita Wave |</a></td> 
+      <td><a href="/equipment/coldbrew">| Cold Brew |</a></td>
+  </table>
+      <a href="/patrons"> Patrons (<%= $patron_length.length %>)</a>
+      <a href="/recipes"> Recipes (<%= $recipe_length.length %>)</a>
+      <a href="/reviews"> Reviews (<%= $review_length.length %>)</a>
+  </div>  
+<%= yield %>
+</body>
+</html>
+
